@@ -7,5 +7,35 @@ It treats non-spatial data and some attributes are categorical (eg. the country)
 Not every point is associated to a measured: different datasets are defined over different time periods and some data is missing; it is not possible to find a point between any pair of points since the some attributes are categorical or discrete.
 The visualization is interactive and has the scope to look for correlations between different indicators about the world situation.
 
-\subsection{Visual encoding}
+\subsection{Visual encoding (bubble chart)}
+The visual variables being used are: position, color, size and shapes (text labels).
 
+\paragraph{Position}
+The position is used to encode the value of \num{2} indicators: the position along the x-axis encodes the first indicator, the position along the y-axis the second one.
+Most indicators are qualitative and continuos, so there exists a well defined bijective function between each point in the chart and each pair of possible values for the indicators.
+
+% TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
+
+\paragraph{Color}
+The color is used to encode any of the available dimension of the data.
+By default, the tool encodes the world regions using the color, but it is possible to select any other attribute.
+The top right corner of the windows, Gapminder shows a colormap for the encoding.
+The tool automatically recognize the type of the attribute and uses an appropriate encoding.
+
+In case of the world regions, the tool generates a categorical colormap and represents it a map:
+each continent of the world if filled by the color that corresponds to that region.
+
+In case of categorical data, the tool generates a legend for the colors:
+each color is associated with a different categorical values.
+
+% TODO: study the colormap encoding
+
+In case of qualitative data, the tool generates a continuos rainbow colormap, ranging from violet to represent the minimum value to red that to represent the maximum.
+It is possible to choose between the linear or a logarithmic scale using the dedicated menu;
+by default the tool uses a linear scale.
+
+% TODO!!!
+The colormap is enriched using labels.
+
+
+TODO: animation
