@@ -1,0 +1,34 @@
+\section{Data Description}
+\label{sec:data}
+
+The datasets used by Gapminder are public and available for free online \footnote{\url{http://www.gapminder.org/data/}}.
+
+The datasets represent an indicator measured over the entire world and different time periods.
+Each dataset has \num{3} dimensions: time, geographical location and indicator.
+
+Time is measured in years.
+The ``less than'' $<$ relationship in the set of natural numbers $\mathbb{N}$ defines a total order between years.
+It is also possible to sum or subtract a natural number for a given year and the result is still a year.
+Thus, time is a discrete attribute.
+
+The geographical location is expressed in countries.
+It does not exists a natural ordering of countries, thus the attribute type is categorical.
+Gapminder has data about \num{244} different countries in the world.
+
+The last dimension is different for each dataset.
+The attribute type of each indicator is different and depends on the indicator itself.
+An example of categorical attributes is ``Democracy score''.
+Some categorical attributes represent meta-information about other indicators in Gapminder and are suggested for advanced usages only.
+
+% TODO: discrete
+
+Most indicator are quantitative, such as ``Income per person (GDP/capita, PPP\$ inflation-adjusted)'' or ``Life expectancy (years)''.
+
+Each dataset in Gapminder can be represented as a table:
+the x-axis represent the time in years, the y-axis represent the country and the data in each cell represent the indicator.
+
+An alternative representation of the data is a set of tuples
+each tuple has two dimensions that represent time and country respectively, and an extra dimension for each indicator.
+
+Not all datasets in Gapminder are complete:
+most indicators are defined for a small time period (few years) and have missing data for some country and / or some particular year.
