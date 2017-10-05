@@ -1,64 +1,61 @@
-\documentclass[conference]{IEEEtran}
-
-\usepackage[utf8]{inputenc}
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+    
 \usepackage[T1]{fontenc}
-\usepackage{silence}\WarningsOff[latexfont]
+\usepackage{fourier}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsfonts,amsthm}
 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{nicefrac}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
 
-\usepackage{graphicx}
-\usepackage{cite}
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
 \usepackage{url}
-\usepackage[caption=false,font=footnotesize]{subfig}
-\usepackage[binary-units,per-mode=symbol]{siunitx}
-\sisetup{list-final-separator = {, and }}
-\usepackage{booktabs}
-\usepackage{pifont}
-\usepackage{microtype}
-\usepackage{textcomp}
-\usepackage[american]{babel}
-\usepackage[noabbrev,capitalise]{cleveref}
-\usepackage{xspace}
-\usepackage{hyphenat}
-\usepackage[draft,inline,nomargin,index]{fixme}
-\fxsetup{theme=color}
-\usepackage{grffile}
-\usepackage{xfrac}
-\usepackage{multirow}
-\RequirePackage{xstring}
-\RequirePackage{xparse}
-\RequirePackage[index=true]{acro}
-\NewDocumentCommand\acrodef{mO{#1}mG{}}{\DeclareAcronym{#1}{short={#2}, long={#3}, #4}}
-\NewDocumentCommand\acused{m}{\acuse{#1}}
-\usepackage{upquote}
 
-\begin{document}
 
-\title{
-    Analysis of Gapminder\\
-    \large 	Visual Analytics for Big Data - Theory Assignment - University of Groningen
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+    \normalfont \normalsize 
+    \textsc{University of Groningen} \\ [25pt]
+    \horrule{0.5pt} \\[0.4cm]
+    \huge Visual Analytics for Big Data \\ Theory Assignment \\
+    \horrule{0.5pt} \\[0.5cm]
 }
 
 \author{
-    \IEEEauthorblockN{Davide Pedranz}
-    \IEEEauthorblockA{\small Student number: S3543757 \\ d.pedranz@student.rug.nl}
+    Davide Pedranz \\
+    \small d.pedranz@student.rug.nl \\
+    \small Student Number: S3543757    
 }
+\date{\normalsize\today}
 
+\begin{document}
 \maketitle
 
-% \begin{abstract}
-% \end{abstract}
-
-\acresetall
-
-% \input{01_introduction}
-\input{02_visualization_solution}
-\input{03_problem}
-\input{04_data}
-\input{05_visual_design}
-\input{06_findings}
+\input{01_visualization_solution}
+\input{02_problem}
+\input{03_data}
+\input{04_visual_design}
+\input{05_findings}
 
 % \bibliographystyle{IEEEtran}
 % \bibliography{references}
