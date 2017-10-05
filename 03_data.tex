@@ -1,28 +1,44 @@
 \section{Data Description}
 \label{sec:data}
 
-The datasets used by Gapminder are public and available for free online \footnote{\url{http://www.gapminder.org/data/}}.
+The data used by Gapminder are public and available for free online \footnote{\url{http://www.gapminder.org/data/}}.
 
-The datasets represent an indicator measured over the entire world and different time periods.
-Each dataset has $3$ dimensions: time, geographical location and indicator.
+\subsection{Data Attributes}
 
-Time is measured in years.
-The ``less than'' $<$ relationship in the set of natural numbers $\mathbb{N}$ defines a total order between years.
+Each dataset represents an indicator measured over the entire world and different time periods and has thus $3$ dimensions: time, geographical location and value of the indicator. Since the $3$ indicators we consider for this assignment share the first $2$ dimensions (time and country), we have a total of $5$ dimensions visualized by the tool.
+
+\paragraph{Time}
+Time is measured in years and is clearly a discrete attribute.
+It is possible to state if $2$ given years are the same of not by simply comparing their number.
+The ``less than'' $<$ relationship of the set of natural numbers $\mathbb{N}$ defines a total order between years.
 It is also possible to sum or subtract a natural number for a given year and the result is still a year.
-Thus, time is a discrete attribute.
+The datasets contain points for the time range $1800$ to $2015$, for a total of $215$ years.
 
-The geographical location is expressed in countries.
-It does not exists a natural ordering of countries, thus the attribute type is categorical.
-Gapminder has data about $244$ different countries in the world.
+\paragraph{Geographical Location}
+The geographical location is expressed in term of countries, grouped into world regions.
+Since it does not exists a natural ordering of countries, the attribute type is categorical.
+Gapminder has data about $244$ different countries in the world, grouped in $5$ regions (which approximate the world's division into continents).
 
-The last dimension is different for each dataset.
-The attribute type of each indicator is different and depends on the indicator itself.
-An example of categorical attributes is ``Democracy score''.
-Some categorical attributes represent meta-information about other indicators in Gapminder and are suggested for advanced usages only.
+\paragraph{Average Income}
+The average income is expressed as the gross domestic product per person, adjusted for differences in purchasing power (measured in international dollars).
+The attribute is clearly quantitative.
+Values range from $300$ to about $150.000$.
 
-% TODO: discrete
+\paragraph{Life Expectation}
+The life expectation is expressed in years.
+The attribute is an average and is thus a continuous values. 
+Values range from $1$ to about $85$.
 
-Most indicator are quantitative, such as ``Income per person (GDP/capita, PPP\$ inflation-adjusted)'' or ``Life expectancy (years)''.
+\paragraph{Population Size}
+The population size is expressed in number of inhabitants.
+This is clearly a natural number, so the population size attribute type is discrete:
+The normal equality, ordering and sum defined in $\mathbb{N}$ apply also for the natural numbers.
+Although it is possible to compare ratios between population sizes, we can not say that the attribute type is continuous (quantitative). 
+The population size ranges from $100$ to about $1.400.000.000$ inhabitants.
+
+
+\subsection{Data Model}
+
 
 Each dataset in Gapminder can be represented as a table:
 the x-axis represent the time in years, the y-axis represent the country and the data in each cell represent the indicator.
