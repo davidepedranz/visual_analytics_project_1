@@ -41,6 +41,7 @@ The user will thus:
     \item Be able to easily compute ratios between the values of the indicators encoded by each point. This allows to compare the situation of pairs of different countries from the point of view of the $2$ indicator.
 \end{itemize}
 
+Additionally, the position visual variable is used in the colormap for the world's regions, as explained in colors paragraph.
 % TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
 % Nevertheless, Gapminder allows the user to select other kinds of attributes as well, which might lead to sub-optimal representations.
 
@@ -67,22 +68,37 @@ On the other hand, it is quite complex to visualize the real values of the popul
 
 
 \paragraph{Color}
-The color is used to encode any of the available dimension of the data.
-By default, the tool encodes the world regions using the color, but it is possible to select any other attribute.
-The top right corner of the windows, Gapminder shows a colormap for the encoding.
-The tool automatically recognize the type of the attribute and uses an appropriate encoding.
+\label{paragraph:bubbles-color}
+The color can be used to encode any of the available dimensions of the dataset.
+In our case, the tool uses the color to encode the world region to which each country belongs.
+Gapminder shows a colormap in the top right corner of the windows:
+the colormap is visualized a small stylized planisphere where each continent if filled with the color that corresponds to its region.
+The tool differentiate $4$ world regions: americas, africa, europe and russia, asia and oceania.
 
-In case of the world regions, the tool generates a categorical colormap and represents it a map:
-each continent of the world if filled by the color that corresponds to that region.
+The colormap is categorical and uses different color hues for each different value.
+The visualization uses the following $4$ colors: green, blue, yellow, red.
+The choice of the color is good, since they are all distinct.
+There is no way to change the colormap or force a different mapping.
+However it does not take into account colorblind people that might have difficulties in distinguish green and red.
 
-In case of categorical data, the tool generates a legend for the colors:
-each color is associated with a different categorical values.
+Each bubble has a black border.
+This makes it easier to identify a bubble and distinguish it from the other ones.
 
-% TODO: study the colormap encoding
+The color of a bubble together with the colormap allows to match each country with a specific location on the planisphere.
+In other words, this allows the user to approximately locate the geographical position of each county.
 
-In case of qualitative data, the tool generates a continuos rainbow colormap, ranging from violet to represent the minimum value to red that to represent the maximum.
-It is possible to choose between the linear or a logarithmic scale using the dedicated menu;
-by default the tool uses a linear scale.
+The encoding if clear: the $4$ choses colors are very different from each other, so it is very easy to distinguish point that corresponds to countries in different regions.
+The inverse mapping from color to region of the world is also pretty straightforward, since there are only $4$ possible regions.
+
+The visualization uses a white background, with a big gray text label in the center (to visualize the year, see the animation paragraph).
+This is a good design choice, since it is a neutral color that does not interfere with the visualization and creates a high contrast with the colors used for the bubbles.
+
+%, but it is possible to select any other attribute.
+% The tool automatically recognize the type of the attribute and uses an appropriate encoding.
+% In case of categorical data, the tool generates a legend for the colors: each color is associated with a different categorical values.
+% In case of qualitative data, the tool generates a continuos rainbow colormap, ranging from violet to represent the minimum value to red that to represent the maximum.
+% It is possible to choose between the linear or a logarithmic scale using the dedicated menu;
+% by default the tool uses a linear scale.
 
 
 \subsubsection{Maps}
@@ -92,3 +108,13 @@ by default the tool uses a linear scale.
 \subsubsection{Rankings}
 
 \subsubsection{Lines}
+
+
+\subsection{Improvements}
+Bullet list of points to discuss:
+\begin{itemize}
+    \item add a legend for the size of the bubbles
+    \item add information about the 3 indicators in the tooltip of the bubble (proximity gestalt law)
+
+    \item colormap... not easy to read for colorblind people... possibility to choose a different colormap for colorblind people, since there are only 4 colors
+\end{itemize}
