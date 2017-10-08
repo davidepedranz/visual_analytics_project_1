@@ -10,24 +10,27 @@ Gapminder is an InfoVis for the following reasons:
     \item The visualization is interactive and has the scope to look for correlations between different indicators about the world situation.
 \end{itemize}
 
+
 \subsection{Visual encoding}
 Gapminder offers $5$ different types of chart, called respectively: bubbles, maps, mountains, rankings and lines.
 Since each chart uses visual variables in different ways, we analyze each of them separately.
+
 
 \subsubsection{Bubbles}
 Gapminder's ``bubbles'' is a bubble chart with animations.
 We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when opening the software.
 
-The visual variables being used are: position, color, size, shapes (text labels) and animations.
+The visual variables being used are: position, size, color, shapes (text labels) and animations.
 
 \vspace{0.5cm}
 TODO: shall I put a screenshot here?
+
 
 \paragraph{Position}
 The position is used to encode the value of $2$ indicators: the position along the x-axis encodes the first indicator (in our case the income), the position along the y-axis the second one (in our case the life expectation).
 Since both indicators are quantitative, each point in the chart is in a bijective relation with a pair of possible values for the indicators.
 
-Each point in the bubble chart represent a country.
+Each point in the bubble chart represents a country.
 The encoding is very good, since it uses a single visual variable to represent $2$ dimensions of the dataset.
 Position is a very powerful visual variable: it is associative, selective, ordinal and quantitative.
 The user will thus:
@@ -38,12 +41,30 @@ The user will thus:
     \item Be able to easily compute ratios between the values of the indicators encoded by each point. This allows to compare the situation of pairs of different countries from the point of view of the $2$ indicator.
 \end{itemize}
 
+% TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
 % Nevertheless, Gapminder allows the user to select other kinds of attributes as well, which might lead to sub-optimal representations.
 
-\vspace{0.5cm}
-TODO: shall I put a screenshot here?
 
-% TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
+\paragraph{Size}
+The size is used to encode the third indicator, in our case the population size.
+In particular, the value is encoded as the area of the bubble.
+
+Size is selective, ordinal and quantitative.
+The user can thus:
+\begin{itemize}
+    \item Easily perceive countries with different populations as different from each other.
+    \item Easily order countries by population size.
+    \item Easily compute ratios between the size of the populations of different countries.
+\end{itemize}
+
+However, the tool does not visualize a legend for the sizes of the bubble.
+This makes difficult to perform the inverse mapping from area of the bubble to size of the population by just looking at the bubble chart.
+The value is visualized on the right side of the screen only if the user moves the mouse over a bubble.
+
+The encoding of the population sizes is overall clear, but it can be improved.
+On the one hand, the user is able to distinguish and compare the population of different countries.
+On the other hand, it is quite complex to visualize the real values of the populations.
+
 
 \paragraph{Color}
 The color is used to encode any of the available dimension of the data.
@@ -63,11 +84,6 @@ In case of qualitative data, the tool generates a continuos rainbow colormap, ra
 It is possible to choose between the linear or a logarithmic scale using the dedicated menu;
 by default the tool uses a linear scale.
 
-% TODO!!!
-The colormap is enriched using labels.
-
-
-TODO: animation
 
 \subsubsection{Maps}
 
