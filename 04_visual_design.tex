@@ -1,25 +1,14 @@
 \section{Visual Design Study}
 \label{sec:visual_design}
 
-Bubbles, x-axis -> income, y-axis -> life expectation, size -> population total, color -> continent, label -> nation.
-
-bubble = nation
-color = region
-size = population
-
-big nations?
-is there a correlation between life and income
-where are region with low correlation and income located?
-where both high?
-
-is there countries with low life and high income?
-long life, low income?
-
 \subsection{Type of visualization}
-Gapminder is an InfoVis.
-It treats non-spatial data and some attributes are categorical (eg. the country) and discrete (eg. the time in years).
-Not every point is associated to a measured: different datasets are defined over different time periods and some data is missing; it is not possible to find a point between any pair of points since the some attributes are categorical or discrete.
-The visualization is interactive and has the scope to look for correlations between different indicators about the world situation.
+Gapminder is an InfoVis for the following reasons:
+\begin{itemize}
+    \item Data is time-dependent, multidimensional (we consider only $5$ dimensions for this assignment, but the complete dataset of Gapminder has over $500$ dimensions) and non-spatial.
+    \item Data attributes have different types: some are categorical (eg. countries), some are discrete (eg. time in years), some are quantitative (eg. average income). 
+    \item Not every point is associated to a measured: different datasets are defined over different time periods and some data is missing; it is not possible to find a point between any pair of points since the some attributes are categorical or discrete.
+    \item The visualization is interactive and has the scope to look for correlations between different indicators about the world situation.
+\end{itemize}
 
 \subsection{Visual encoding (bubble chart)}
 The visual variables being used are: position, color, size and shapes (text labels).
