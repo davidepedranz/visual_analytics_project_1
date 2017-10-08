@@ -1,7 +1,7 @@
 \section{Data Description}
 \label{sec:data}
 
-The data used by Gapminder are public and available for free online \footnote{\url{http://www.gapminder.org/data/}}.
+The data used by Gapminder is public and available for free online \footnote{\url{http://www.gapminder.org/data/}}.
 
 \subsection{Data Attributes}
 
@@ -39,12 +39,24 @@ The population size ranges from $100$ to about $1.400.000.000$ inhabitants.
 
 \subsection{Data Model}
 
+\paragraph{Internal Representation}
+Each indicator in Gapminder is internally represented as a table:
+the x-axis represents the time in years, the y-axis represents the country and the data in each cell represent the value measured for the indicator in the given year and country.
 
-Each dataset in Gapminder can be represented as a table:
-the x-axis represent the time in years, the y-axis represent the country and the data in each cell represent the indicator.
+Not all datasets in Gapminder have the same size.
+Most indicators are defined for a small time period (few years) and have missing data for some country and / or some particular year.
+Some indicator are not measured for some countries.
+Missing data corresponds to empty cells in some of these tables.
 
-An alternative representation of the data is a set of tuples
-each tuple has two dimensions that represent time and country respectively, and an extra dimension for each indicator.
+\paragraph{Alternative Representation}
+An alternative representation of the data is a set of tables (one for each year) \texttt{dataset\_<year>}, where \texttt{<year>} is replaced by the year to which the table refers.
+Each table has $4$ columns: \texttt{country}, \texttt{income}, \texttt{life\_expectation} and \texttt{population\_size}.
+The column \texttt{country} is the primary key.
+Each row in the dataset represents the situation of a country, measured in terms for the $3$ indicators described above for the year specified in the table's name.
 
-Not all datasets in Gapminder are complete:
-most indicators are defined for a small time period (few years) and have missing data for some country and / or some particular year.
+In other words, each table represents the projection of the entire dataset for a single year.
+The same representation would also apply to a bigger subset of indicators: we would simply add an extra column for each considered indicator.
+
+Additionally, countries are grouped into regions.
+This can be represented with an extra table \texttt{countries} with $2$ columns: \texttt{country} (primary key) and \texttt{region}.
+The column \texttt{country} of each table \texttt{dataset\_<year>} is a foreign key for \texttt{countries.country}.
