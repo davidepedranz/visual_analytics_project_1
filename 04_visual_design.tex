@@ -15,12 +15,33 @@ Gapminder offers $5$ different types of chart, called respectively: bubbles, map
 Since each chart uses visual variables in different ways, we analyze each of them separately.
 
 \subsubsection{Bubbles}
+Gapminder's ``bubbles'' is a bubble chart with animations.
+We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when opening the software.
 
 The visual variables being used are: position, color, size, shapes (text labels) and animations.
 
+\vspace{0.5cm}
+TODO: shall I put a screenshot here?
+
 \paragraph{Position}
-The position is used to encode the value of $2$ indicators: the position along the x-axis encodes the first indicator, the position along the y-axis the second one.
-Most indicators are qualitative and continuos, so there exists a well defined bijective function between each point in the chart and each pair of possible values for the indicators.
+The position is used to encode the value of $2$ indicators: the position along the x-axis encodes the first indicator (in our case the income), the position along the y-axis the second one (in our case the life expectation).
+Since both indicators are quantitative, each point in the chart is in a bijective relation with a pair of possible values for the indicators.
+
+Each point in the bubble chart represent a country.
+The encoding is very good, since it uses a single visual variable to represent $2$ dimensions of the dataset.
+Position is a very powerful visual variable: it is associative, selective, ordinal and quantitative.
+The user will thus:
+\begin{itemize}
+    \item Perceive each point independently of the other visual variables used. This allows to use other variables (eg. size or color) to encode additional dimensions of the data.
+    \item Perceive each point as different from each other. This allows to easily distinguish countries from each other on the chart.
+    \item Be able to easily order the points. This allows to easily tell which countries have lowest and highest values for one indicator and order the countries based on some indicator.
+    \item Be able to easily compute ratios between the values of the indicators encoded by each point. This allows to compare the situation of pairs of different countries from the point of view of the $2$ indicator.
+\end{itemize}
+
+% Nevertheless, Gapminder allows the user to select other kinds of attributes as well, which might lead to sub-optimal representations.
+
+\vspace{0.5cm}
+TODO: shall I put a screenshot here?
 
 % TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
 
