@@ -51,7 +51,7 @@ We consider the particular instance of bubble chart with the income on the x-axi
 \vspace{0.5cm}
 TODO: shall I put a screenshot here?
 
-The visual variables being used are: position, size, color, shapes (text labels) and animations.
+The visual variables being used are: position, size, color, text labels and animations.
 
 \paragraph{Position}
 The position is used to encode the value of $2$ indicators: the position along the x-axis encodes the first indicator (in our case the income), the position along the y-axis the second one (in our case the life expectation).
@@ -127,6 +127,27 @@ This is a good design choice, since it is a neutral color that does not interfer
 % It is possible to choose between the linear or a logarithmic scale using the dedicated menu;
 % by default the tool uses a linear scale.
 
+\paragraph{Text Labels}
+Text labels are used to show the name of the indicator visualized on the axises, the measure units and the value for the ticks.
+The measure unit is shown above to the right for the x-axis.
+Below the axis there are the values for the ticks (about $10$).
+Below them in the center there is the name of the indicator.
+All labels are gray.
+The y-axis is similar.
+
+% TODO: describe better
+
+Labels are used to visualize additional information about the bubbles.
+When the user selects a particular bubble (either by moving the mouse over it or selecting the checkbox of the corresponding country in the right panel), a text label is shown to the top right of the bubble.
+The text label contains the name of the country, followed by the year.
+
+Additionally, $2$ dashed lines parallel to the axis are displayed when the mouse pointer is over a bubble.
+The lines start to from the bubble and intercept respectively the x and y-axis.
+A new text label with the value for the indicators of the country that corresponds to the bubble is shown at the intersection with the axis.
+This is a good design choice, since it allows the user to easily obtain additional information about interesting countries without polluting the visualization with the details about all the countries.
+
+\paragraph{Animation}
+TODO...
 
 \subsubsection{Maps}
 
@@ -138,6 +159,7 @@ This is a good design choice, since it is a neutral color that does not interfer
 
 
 \subsection{Improvements}
+TODO...
 Bullet list of points to discuss:
 \begin{itemize}
     \item add a legend for the size of the bubbles
