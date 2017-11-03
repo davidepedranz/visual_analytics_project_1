@@ -71,7 +71,7 @@ We consider the particular instance of bubble chart with the income on the x-axi
 	\label{fig:bubbles}
 \end{figure}
 
-The visual variables being used are: position, size, color, text labels and animations.
+The visual variables being used are: position, size, color, text labels, animations and transparency.
 
 \paragraph{Position}
 The position is used to encode the value of $2$ indicators:
@@ -126,7 +126,6 @@ The value is visualized on the right side of the screen only if the user moves t
 The encoding of the population sizes is overall clear, but it can be improved.
 On the one hand, the user is able to distinguish and compare the population of different countries.
 On the other hand, it is quite complex to visualize the real values of the populations.
-
 
 \paragraph{Color}
 \label{paragraph:bubbles-color}
@@ -188,7 +187,40 @@ A new text label with the value for the indicators of the country that correspon
 This is a good design choice, since it allows the user to easily obtain additional information about interesting countries without polluting the visualization with the details about all the countries.
 
 \paragraph{Animation}
-TODO...
+Animation is used to show encode time.
+Opposite to x-axis, y-axis, color and size, it is not possible to change the dimension of the dataset encoded with the animation.
+
+The animation is started by pressing the ``play'' button in the bottom right corner of the windows.
+When the animation is running, bubbles change position, size and color according to the new value of the corresponding indicators.
+The slider on the bottom and the label with the year in the background change respectively position and value to reflect the time to which the indicators refers.
+The ``play'' button changes icon to ``pause'': the user can stop the animation by pressing it again.
+A small control to the right of the slider allows to change the speed of the animation.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/bubbles-animation}
+	\caption{Animation in a chart of type ``bubbles'' in Gapminder.}
+	\label{fig:bubbles-animation}
+\end{figure}
+
+The user can also select one or more countries before running the animation.
+In this case, Gapminder shows multiple bubbles for each selected countries, in particular one for each year the animation is played.
+Successive bubbles are connected by a line of the same color of the bubble (if they do not partially overlap already).
+The unselected countries are ``hidden'' by reducing their level of transparency (see the next paragraph).
+
+This features allows the user to visualize better visualize trends.
+One can first play the animation without selecting any particular country to can an idea about the general trend, and then select a group of countries of interest:
+Gapminder will visualize the evolution over time for the selected countries (\cref{fig:bubbles-animation}).
+This makes also easy to compare the evolution of the situation of some countries during time.
+
+Animations are very powerful, but come with some drawbacks.
+In the example shown in \cref{fig:bubbles-animation}, the problem of overlapping described in the position paragraph is heightened.
+This is particularly true for bubbles with a big size (India in our example);
+an expert user can reduce the problem by changing the scale size for the bubbles using the ``Options'' menu.
+Nevertheless, animations are really effective to visualize changes and trends in the indicators over time.
+
+\paragraph{Transparency}
+select bubbles -> new menu on the right
 
 \subsubsection{Maps}
 
