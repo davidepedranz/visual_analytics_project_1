@@ -110,7 +110,6 @@ Additionally, the position visual variable is used in the colormap for the world
 
 % TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
 
-
 \paragraph{Size}
 The size is used to encode the third indicator, in our case the population size.
 In particular, the value is encoded as the area of the bubble.
@@ -144,26 +143,36 @@ The colormap is categorical and uses different color hues for each different val
 The visualization uses the following $4$ colors: green, blue, yellow, red.
 The choice of the color is good, since they are all distinct.
 There is no way to change the colormap or force a different mapping.
-However it does not take into account colorblind people that might have difficulties in distinguish green and red.
 
-Each bubble has a black border.
-This makes it easier to identify a bubble and distinguish it from the other ones.
+Each bubble has a black border:
+this makes it easier to identify a bubble and distinguish it from the other ones.
+The visualization uses a white background, with a big gray text label in the center (to visualize the year, see the animation paragraph).
+This is a good design choice, since it is a neutral color that does not interfere with the visualization and creates a high contrast with the colors used for the bubbles.
+
+The encoding is clear: the $4$ choses colors are very different from each other, so it is very easy to distinguish point that corresponds to countries in different regions.
+The inverse mapping from color to region of the world is also pretty straightforward, since there are only $4$ possible regions.
+However, the choice of the colors does not take into account colorblind people that might have difficulties to distinguish green and red.
 
 The color of a bubble together with the colormap allows to match each country with a specific location on the planisphere.
 In other words, this allows the user to approximately locate the geographical position of each county.
 
-The encoding if clear: the $4$ choses colors are very different from each other, so it is very easy to distinguish point that corresponds to countries in different regions.
-The inverse mapping from color to region of the world is also pretty straightforward, since there are only $4$ possible regions.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/bubbles-continuos-color}
+	\caption{Use of color to encode a continuos data attribute in a chart of type ``bubbles'' in Gapminder.}
+	\label{fig:bubbles-continuos-color}
+\end{figure}
 
-The visualization uses a white background, with a big gray text label in the center (to visualize the year, see the animation paragraph).
-This is a good design choice, since it is a neutral color that does not interfere with the visualization and creates a high contrast with the colors used for the bubbles.
+Gapminder allows to change the attribute encoded in color.
+\cref{fig:bubbles-continuos-color} shows an example where color is used to encode the percentage of children that complete the primary school.
+Gapminder automatically detects that the type of attribute is continuos and changes the color map to a continuos rainbow colormap, ranging from violet to represent the minimum value to red that to represent the maximum. It is possible to choose between the linear or a logarithmic scale using the dedicated menu; by default the tool uses a linear scale.
 
-%, but it is possible to select any other attribute.
-% The tool automatically recognize the type of the attribute and uses an appropriate encoding.
-% In case of categorical data, the tool generates a legend for the colors: each color is associated with a different categorical values.
-% In case of qualitative data, the tool generates a continuos rainbow colormap, ranging from violet to represent the minimum value to red that to represent the maximum.
-% It is possible to choose between the linear or a logarithmic scale using the dedicated menu;
-% by default the tool uses a linear scale.
+This encoding is not optimal:
+rainbow color maps have been proven to be confusing (due to the non-obvious ordering of colors) and misleading (since it creates bands of colors with almost constant hues and sharp transitions in between) \cite{color-maps}.
+
+In case the attribute mapped to color is missing, Gapminder shows a white bubble with a black border.
+This is a good design choice, since white is a neutral color that does not interfere with the other colors.
+
 
 \paragraph{Text Labels}
 Text labels are used to show the name of the indicator visualized on the axises, the measure units and the value for the ticks.
