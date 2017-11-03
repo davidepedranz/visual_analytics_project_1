@@ -77,23 +77,38 @@ The visual variables being used are: position, size, color, text labels and anim
 
 
 \paragraph{Position}
-The position is used to encode the value of $2$ indicators: the position along the x-axis encodes the first indicator (in our case the income), the position along the y-axis the second one (in our case the life expectation).
-Since both indicators are quantitative, each point in the chart is in a bijective relation with a pair of possible values for the indicators.
+The position is used to encode the value of $2$ indicators:
+the position along the x-axis encodes the first indicator (in our case the income), the position along the y-axis the second one (in our case the life expectation).
+Each point in the chart corresponds to a pair of income and life expectation.
+By default, Gapminder limits the range of values showed on each axis between the smallest and the biggest value for the attribute displayed on that axis (plus some additional margin to make sure points do not overlap with the axises).
+It is possible, if needed, to manually change the ranges using the ``Options'' menu at the bottom of the right side panel.
 
-Each point in the bubble chart represents a country.
-The encoding is very good, since it uses a single visual variable to represent $2$ dimensions of the dataset.
+Each bubble in the chart represents a country.
 Position is a very powerful visual variable: it is associative, selective, ordinal and quantitative.
 The user will thus:
 \begin{itemize}
-    \item Perceive each point independently of the other visual variables used. This allows to use other variables (eg. size or color) to encode additional dimensions of the data.
-    \item Perceive each point as different from each other. This allows to easily distinguish countries from each other on the chart.
+    \item Distinguish relatively easily different points (i.e. different countries).
+    \item Perceive each point independently of the other visual variables used. This allows to use other variables (eg. color or size) to encode additional dimensions of the data.
     \item Be able to easily order the points. This allows to easily tell which countries have lowest and highest values for one indicator and order the countries based on some indicator.
     \item Be able to easily compute ratios between the values of the indicators encoded by each point. This allows to compare the situation of pairs of different countries from the point of view of the $2$ indicator.
 \end{itemize}
 
-Additionally, the position visual variable is used in the colormap for the world's regions, as explained in colors paragraph.
+Please note that there are some limitations with this encoding.
+For example, countries with the same income and life expectation will be shown in the same position:
+it would be impossible for the user to distinguish them.
+Also, bubbles with a big size tend to overlap with the others (since they take a lot of space on the screen).
+Gapminder tries to reduce this problem in $2$ ways:
+it shows smaller bubbles above bigger bubbles and it interactively shows the name of the countries in a label when the user moves the mouse on a bubble.
+
+Overall, the encoding is good:
+it uses a single visual variable (position) to represent $2$ dimensions of the dataset.
+Although it is possible, it is unlikely that $2$ or more countries have exactly the same income and life expectation.
+Gapminder takes some measures to reduce the problem of overlapping bubbles.
+It also allows to encode, with some limitations, other attributes in size and color.
+
+Additionally, the position visual variable is used in the colormap for the world's regions, as explained in the colors paragraph.
+
 % TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
-% Nevertheless, Gapminder allows the user to select other kinds of attributes as well, which might lead to sub-optimal representations.
 
 
 \paragraph{Size}
