@@ -3,7 +3,7 @@
 
 \subsection{Questions}
 Gapminder tried to answer to many questions.
-We start from low-level concrete questions, then try to use them to understand the problems the tool aims to solve. 
+We start from low-level concrete questions, then try to use them to understand the real problem that the tool aims to solve. 
 
 \pagebreak
 
@@ -68,11 +68,26 @@ We start from low-level concrete questions, then try to use them to understand t
     \item Can you predict the trend for the next years?
 \end{itemize}
 
+The central element in Gapminder is time, present by default in all visualization.
+The tool visualizes changes and trends for the selected indicators for different countries over time.
+Even though it is possible to build visualizations without where time is not present, Gapminder is not designed for that.
+We will discuss in greater detail of time is visualized in Gapminder in \cref{sec:visual_design}.
+
 \subsection{Users}
-Each dataset in Gapminder has time and geographical information.
-Datasets represents all kind of indicators from many different sectors.
-The range of users for this tool is broad.
-Typical users could be historians, analysts, economists, journalists, politicians, teachers and researchers.
+Each indicator present in Gapminder has time and geographical information.
+Indicators ranges among very different categories and the tool makes trivial to visualize them together and compare the situation of different countries from different points of view.
+The tool is very easy to download, install (there is even the online version) and use.
+The offered visualizations are simple and easy to understand even for people without any previous knowledge about the data.
+
+The range of users for this tool is wide.
+In general, we can say that the tool is designed for the grand public, for everybody which is curious in the exploration of social/political/historical/economical trends for different countries or continents in the world.
+The tool is also perfect for teachers that want to present the world situation (and its evolution over time) using concrete data and effective visualizations 
+(Gapminder's website has an entire section dedicated to teachers\footnote{\url{http://www.gapminder.org/for-teachers/}}).
+
+Each indicator in Gapminder has a provides a detailed description, the sources, the confidence about the measures, and describes how data are collected, aggregated and normalized.
+However, this information is not explicit in the tool, but is only available from the Gapminder website\footnote{\url{https://www.gapminder.org/data/}}.
+Gapminder is not designed for professional economists, analysts and researchers, since they usually need to analyze this kind of information in their work.
+
 
 \subsection{Purpose}
 The purpose of the visualization is to present a picture of the global world situation from many different points of view.
