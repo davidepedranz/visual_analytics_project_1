@@ -61,6 +61,7 @@ The slider allows to manually change the visualized year.
 
 
 \subsubsection{Bubbles}
+\label{subsubsec:bubbles}
 Gapminder's ``bubbles'' is a bubble chart with animations.
 We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when creating a new chart of type ``bubbles''.
 
@@ -241,7 +242,18 @@ The encodings for text labels and transparency are the same as for the ``bubbles
 	\label{fig:maps}
 \end{figure}
 
-\paragraph{title}
+\paragraph{Position}
+The position is used to encode the geographical location of a country:
+each bubble is centered in the center of the country to which it refers.
+This allows to both easily compare the situation of countries which are located closed to each other.
+The encoding is very clear, but it has the same problem of overlapping of bubbles presented in the \cref{subsubsec:bubbles}:
+the problem particular present for europe and africa, since there are many countries in a relatively small area.
+
+\paragraph{Size}
+
+\paragraph{Color}
+
+\paragraph{Animation}
 
 
 \subsubsection{Mountains}
