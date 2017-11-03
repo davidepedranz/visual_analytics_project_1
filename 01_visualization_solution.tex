@@ -2,19 +2,32 @@
 \label{sec:visualization_solution}
 
 The visualization solution analyzed in this assignment is Gapminder tool \footnote{\url{https://www.gapminder.org}}.
-Gapminder is a tool that allows to explore about $500$ different datasets related to various indicators measured over the entire world and over different time periods.
-The datasets are organized in hierarchical categories (economy, education, environment, health, population, etc.) and each category contain one or more dataset.
-Example of datasets available in Gapminder are:
+Gapminder is a tool that allows to explore a dataset with about $500$ indicators measured around the entire world over different time periods.
+Each observation in the dataset represent the value measured for one of the indicators for a specific country in the world in a given year.
+Gapminder provides data for all (or almost all countries) in the world.
+Countries are organized in groups by geographical region.
+
+Indicators are organized in hierarchical categories (economy, education, environment, health, population, etc.) and each category contains one or more dimensions.
+Example of indicators available in Gapminder are:
 \begin{itemize}
     \item child mortality rate;
     \item income per person;
     \item CO2 per capita.
 \end{itemize}
-It is also possible to load and visualize external datasets.
-The tool allows to visualize and compare these indicators using the following type of charts:
-bubbles, maps, mountains, rankings and lines.
+It is also possible to load and visualize additional indicators provided by the user.
 
-From the large number of available datasets, I have selected the followings for this assignment:
+The tool allows to visualize and compare the dimensions in the dataset using the following type of charts:
+\begin{itemize}
+    \item bubbles (bubble charts);
+    \item maps;
+    \item mountains (stacked area charts);
+    \item rankings (bar charts);
+    \item lines (multivariable line charts).
+\end{itemize}
+
+\vspace{5mm}
+
+From the large number of available indicators, I have selected the followings for this assignment:
 \begin{itemize}
     \item time (expressed in year);
     \item geographical location (country, continent);
