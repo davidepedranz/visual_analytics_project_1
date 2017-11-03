@@ -322,7 +322,15 @@ On the one hand, this makes easier to associate them with the correct bar.
 On the other hand, it is particularly difficult to read the labels inside red and blue bars due to the low contrast.
 
 \paragraph{Animation}
+Animation is used to show encode time.
+During the animation, position, size, label and labels of the bars are updated to reflect the displayed year.
+The user can select one or more countries to highlight them:
+in this case, Gapminder will also automatically scroll the view if the selected bars exits the current one.
 
+The animation allows to track the evolution of the selected countries over time.
+However, it does not allow to have a visualize the global trend, since there are too many variations (also, not all bars fit in the size of a the monitor).
+It is also difficult to compare $2$ or more countries, since small changes in the measured value can cause significant changes in the ranking and / or a swap in their relative order: tracking all these variations over successive visualizations is hard.
+For this kind of task, the chart of type ``bubbles'' is to be preferred.
 
 
 \subsubsection{Lines}
