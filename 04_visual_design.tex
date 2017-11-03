@@ -178,7 +178,7 @@ All labels are gray.
 The y-axis is similar.
 
 Labels are used to visualize additional information about the bubbles.
-When the user selects a particular bubble (either by moving the mouse over it or selecting the checkbox of the corresponding country in the right panel), a text label is shown to the top right of the bubble.
+When the user selects a particular bubble (either by moving the mouse over it, clicking it or selecting the checkbox of the corresponding country in the right panel), a text label is shown to the top right of the bubble.
 The text label contains the name of the country, followed by the year.
 
 Additionally, $2$ dashed lines parallel to the axis are displayed when the mouse pointer is over a bubble.
@@ -220,13 +220,22 @@ an expert user can reduce the problem by changing the scale size for the bubbles
 Nevertheless, animations are really effective to visualize changes and trends in the indicators over time.
 
 \paragraph{Transparency}
-select bubbles -> new menu on the right
+Transparency does not encode any attribute of the dataset, but it is used to temporarily hide elements from the visualization.
+When the user selects some bubbles, the unselected ones are hidden by reducing their level of transparency.
+A slider is shown in the right panel and allows to change the transparency level.
+
+This is a very good design choice, since it solves the problem of too many / overlapping bubbles and allows the user to focus on some particularly interesting country (or group of countries).
+The same argument is valid during animations.
+
 
 \subsubsection{Maps}
 
+
 \subsubsection{Mountains}
 
+
 \subsubsection{Rankings}
+
 
 \subsubsection{Lines}
 
