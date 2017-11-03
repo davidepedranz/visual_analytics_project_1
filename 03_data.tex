@@ -41,7 +41,8 @@ The datasets contain points for the time range $1800$ to $2015$, for a total of 
 
 \subsection{Data Model}
 
-\paragraph{Internal Representation}
+\subsubsection{Internal Representation}
+\label{subsubsec:internal_representation}
 Each indicator in Gapminder is internally represented as a table:
 the x-axis represents the time in years, the y-axis represents the country and the data in each cell represent the value measured for the indicator in the given year and country.
 
@@ -50,14 +51,19 @@ Most indicators are defined for a small time period (few years) and have missing
 Some indicator are not measured for some countries.
 Missing data corresponds to empty cells in some of these tables.
 
-\paragraph{Alternative Representation}
+\subsubsection{Alternative Representation}
 An alternative representation of the data is a set of tables (one for each year) \texttt{dataset\_<year>}, where \texttt{<year>} is replaced by the year to which the table refers.
 Each table has $4$ columns: \texttt{country}, \texttt{income}, \texttt{life\_expectation} and \texttt{population\_size}.
 The column \texttt{country} is the primary key.
 Each row in the dataset represents the situation of a country, measured in terms for the $3$ indicators described above for the year specified in the table's name.
-
 In other words, each table represents the projection of the entire dataset for a single year.
 The same representation would also apply to a bigger subset of indicators: we would simply add an extra column for each considered indicator.
+
+Since all tables have the same structure, they can be combined in a cube:
+the first dimensions represents the countries, the second dimension contains all indicators measured for the countries and the last dimension present time.
+The projection of the cube along the third dimension (i.e. filtering the data for a specific year) results in the tables described in the previous paragraph.
+The projection along the second dimension (i.e. selecting a single indicator) results in the representation described in \cref{subsubsec:internal_representation}. 
+The projection along the first dimension (i.e. fixing a country) represents the evolution over time of all indicators for a country and can be seen as a table with the indicators on the x-axis and time in the y-axis.
 
 Additionally, countries are grouped into regions.
 This can be represented with an extra table \\ \texttt{countries} with $2$ columns: \texttt{country} (primary key) and \texttt{region}.
