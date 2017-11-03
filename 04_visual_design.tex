@@ -294,8 +294,32 @@ It is also allows to compare pairs of countries in the ranking for the indicator
 In this sense, the encoding is good.
 
 \paragraph{Size}
+Size is used to encode an indicator, such as the size of the population.
+The length of each bar is linearly proportional to the value of the indicator.
+It is possible to change the scale to logarithmic by clicking on the title of the chart, above the first bar.
+
+The user is able to:
+\begin{itemize}
+	\item Order countries by the value of the indicator.
+	\item Compute ratios between the value of the indicator for different countries. In the example of \cref{fig:rankings}, the user can for example estimate the population of China to $3$ to $4$ times bigger than the one of the United States.
+\end{itemize}
+
+The encoding is good for ordering and computing rates.
+However, it is not easy to extract the absolute value of a bar, since there is no length legend.
+This information is only encoded in text labels inside each bar, but they are not always easy to read.
 
 \paragraph{Text Labels}
+Text labels does not encode directly any dimension, but are fundamental for different aims:
+\begin{itemize}
+	\item The title of the chart indicates which indicator is encoded in the length of the bar.
+	\item The labels before each bar indicates which country the bar refers to.
+	\item The labels inside each bar report the value of the indicator measured in the corresponding country.
+	\item A big text label in the top part of the right panel indicates in which year are measured the displayed data.
+\end{itemize}
+
+The labels with the country names and those inside the bars have the same color hue of bar to which they refer (with a slightly higher saturation).
+On the one hand, this makes easier to associate them with the correct bar.
+On the other hand, it is particularly difficult to read the labels inside red and blue bars due to the low contrast.
 
 \paragraph{Animation}
 
