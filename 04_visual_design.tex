@@ -233,7 +233,7 @@ The same argument is valid during animations.
 Gapminder's ``maps'' visualize the value of an indicator as a bubble centered in each country on a simplified world map (in the background).
 \cref{fig:maps} shows a chart of type ``maps'' that visualizes the population size of the different countries.
 The visual variables used are position, size, color, text labels, animation and transparency.
-The encodings for text labels and transparency are the same as for the ``bubbles'', so we skip them here.
+The encodings for size, text labels and transparency are the same as for the ``bubbles'', so we skip them here.
 
 \begin{figure}[h]
 	\centering
@@ -249,11 +249,16 @@ This allows to both easily compare the situation of countries which are located 
 The encoding is very clear, but it has the same problem of overlapping of bubbles presented in the \cref{subsubsec:bubbles}:
 the problem particular present for europe and africa, since there are many countries in a relatively small area.
 
-\paragraph{Size}
-
 \paragraph{Color}
+By default, color is used to encode the geographical region of the countries, like for the ``bubbles'' chart.
+The encoding is clear, but it does not make much sense here, since the same information is encoded already in position.
+This overloading wastes an important visualization variable that can be used to represent another dimension of the dataset.
+
+Gapminder allows to change the dimension encoded in color using the corresponding menu.
+The same discussion about color in \cref{subsubsec:bubbles} applies here as well.
 
 \paragraph{Animation}
+
 
 
 \subsubsection{Mountains}
