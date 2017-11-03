@@ -2,14 +2,20 @@
 \label{sec:visual_design}
 
 \subsection{Type of visualization}
-Gapminder is an InfoVis for the following reasons:
+Gapminder is an Information Visualization (InfoVis) for the following reasons:
 \begin{itemize}
-    \item Data is time-dependent, multidimensional (we consider only $5$ dimensions for this assignment, but the complete dataset of Gapminder has over $500$ dimensions) and non-spatial.
-    \item Data attributes have different types: some are categorical (eg. countries), some are discrete (eg. time in years), some are quantitative (eg. average income). 
-    \item Not every point is associated to a measured: different datasets are defined over different time periods and some data is missing; it is not possible to find a point between any pair of points since the some attributes are categorical or discrete.
+    \item The domain of the data is discrete: Gapminder visualizes indicators measured over different countries in the world. The space of countries is clearly discrete.
+    \item Data attributes have different types: some are categorical (e.g. countries), some are discrete (e.g. time in years), some are quantitative (e.g. average income). 
+    \item The dimensionality of data values is high. We consider only $3$ indicators for each country, but the complete dataset of Gapminder has over $500$ indicators.
+    \item All dimensions (except the geographical location) are time dependent, i.e. indicators are measured and vary over time.
     \item The visualization is interactive and has the scope to look for correlations between different indicators about the world situation.
 \end{itemize}
 
+Gapminder is clearly not a Scientific Visualization (SciVis).
+SciVis data have a spatial domain, numerical values for the data attributes and a low dimension.
+
+Gapminder is also clearly not a Infographic, since it is interactive and allows to explore different indicators.
+Infographics are static, visualize summaries of the data and have the goal to present some content to a large audience.
 
 \subsection{Visual encoding}
 Gapminder offers $5$ different types of chart, called respectively: bubbles, maps, mountains, rankings and lines.
