@@ -20,13 +20,24 @@ Infographics are static, visualize summaries of the data and have the goal to pr
 \subsection{Visual encoding}
 Gapminder offers $5$ different types of chart, called respectively: bubbles, maps, mountains, rankings and lines.
 Since each chart uses visual variables in different ways, we analyze each of them separately.
+
 For each chart, the screen is divided in different sectors:
-a navigation bar in the top, a side bar on the right, the chart on the center-left and a slider in the bottom.
+a navigation bar in the top, the chart in the center, a slider at the bottom and a side bar on the right.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/home}
+	\caption{Gapminder allows to work on multiple visualization at the same time. When creating a new chart, the user is asked to select the wanted type among the $5$ available.}
+	\label{fig:home}
+\end{figure}
 
 \paragraph{Navigation}
-Gapminder allows the user to create and use multiple charts at the same time;
-each chart is visualized as a tab in the navigation bar.
-The user can change the visualized chart by clicking the tabs in the navigation bar.
+Gapminder allows the user to create and use multiple charts at the same time: each chart is visualized as a tab in the navigation bar.
+The navigation bar is located in the top part of the windows and is always visible.
+The user can change the chart currently visualized by clicking the corresponding tab in the navigation bar.
+To create a new chart, the user can use the \texttt{+} plus button at the end of the navigation bar.
+When the user clicks the plus button, a new tab is created and displayed (\cref{fig:home}):
+the user can choose a type of chart by clicking the correspondent button.
 
 \paragraph{Right Panel}
 The panel on the right contains different controls.
@@ -35,29 +46,35 @@ At the very top, a menu allows the user to change the variable encoded as color.
 Immediately below, Gapminder shows a colormap for the chosen variable.
 Next we find a list of checkbox, one for each country.
 This is a filter: it allows the user to select or deselect the countries to show.
-By default, all countries are visualized in the chart.
-Below there is another menu that controls the variable encoded into size.
-This menu is present only for bubbles and maps.
 At the very bottom there are some buttons that allows to control the zoom level, change the settings or activate the presentation mode.
+Depending on the type of chart, Gapminder shows additional buttons in this area;
+we will discuss this aspect in the sections about each chart's type.
 
 \paragraph{Chart}
 In the center-left part of the screen there is the current chart.
 The chart occupies most of the area available on the screen.
-We will describe each chart in details in the following sections.
 
 \paragraph{Bottom Slider}
-In the bottom part of the screen we find a button and a slider.
+In the bottom part of the screen we find a ``play'' button and a time slider.
 The button is used to start and stop the animation.
 The slider allows to manually change the visualized year.
 
+% TODO... add stuff here?
+
+
 \subsubsection{Bubbles}
 Gapminder's ``bubbles'' is a bubble chart with animations.
-We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when opening the software.
+We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when creating a new chart of type ``bubbles''.
 
-\vspace{0.5cm}
-TODO: shall I put a screenshot here?
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/bubbles}
+	\caption{Chart of type ``bubbles'' in Gapminder.}
+	\label{fig:bubbles}
+\end{figure}
 
 The visual variables being used are: position, size, color, text labels and animations.
+
 
 \paragraph{Position}
 The position is used to encode the value of $2$ indicators: the position along the x-axis encodes the first indicator (in our case the income), the position along the y-axis the second one (in our case the life expectation).
