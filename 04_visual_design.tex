@@ -268,6 +268,37 @@ For the same reason, selected countries do not have any particular behaviour dur
 
 
 \subsubsection{Rankings}
+Gapminder's ``rankings'' are bar charts with animations.
+Each bar corresponds to a country.
+The bar charts is oriented horizontally.
+The visual variables used are position, size, color, text labels, animations and transparency.
+The encodings for color and transparency are the same as for the ``bubbles'', so we skip them here.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/rankings}
+	\caption{Chart of type ``rankings'' in Gapminder.}
+	\label{fig:rankings}
+\end{figure}
+
+
+\paragraph{Position}
+Position is used to encode the ranking of countries by the value of the indicator encoded in size.
+Countries are ordered for decreasing values:
+countries with higher values are located at the top, the ones with lower values at the bottom.
+It is not possible to change the ordering, i.e. put the countries with lower values at the top.
+Countries without data for the indicator are put to the bottom.
+
+The encoding allows the user to easily find the top countries and the ones with the smaller values for the displayed indicator, although this usually requires to scroll down with the mouse (since a normal size screen is not long enough to display all bars).
+It is also allows to compare pairs of countries in the ranking for the indicator.
+In this sense, the encoding is good.
+
+\paragraph{Size}
+
+\paragraph{Text Labels}
+
+\paragraph{Animation}
+
 
 
 \subsubsection{Lines}
