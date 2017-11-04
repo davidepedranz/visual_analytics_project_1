@@ -502,7 +502,8 @@ The tool ColorBrewer\footnote{\url{http://colorbrewer2.org}} provides many choic
 
 A similar problem is the choice of the rainbow colormap for continuous data attributes.
 The rainbow colormap has been proven to be confusing and misleading \cite{color-maps} in many papers in the literature.
-We suggest to use a heat colormap as the default for continuous values, since it allows a natural ordering of colors and it thus easier to invert.
+We suggest to use a two-hue as the default for continuous values, since it allows a natural ordering of colors and it thus easier to invert.
+Heat colormap would also work, but would create ambiguities in case of missing values.
 
 \paragraph{Bubbles' Size}
 In the chart of types ``bubbles'' and ``map'', countries are represented as bubbles and the size is used to encode a given dimension of the dataset.
@@ -516,11 +517,3 @@ We propose a trivial solution to solve the problem: add a legend for the size.
 	\caption{Example of size legend in a visualization in Tableaux. The right has as a panel with the some legend for the size of the bubbles used in the visualization. The example is taken from the ``World Indicators'' sample workbook in Tableaux Desktop 10.4.}
 	\label{fig:size-legend}
 \end{figure}
-
-
-\paragraph{TODO}
-Bullet list of points to discuss:
-\begin{itemize}
-    \item add a legend for the size of the bubbles
-    \item add information about the 3 indicators in the tooltip of the bubble (proximity gestalt law)
-\end{itemize}
