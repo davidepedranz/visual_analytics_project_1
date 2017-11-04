@@ -312,17 +312,25 @@ The non-stacked version has overlapping problems:
 countries with similar income's distributions result in overlapping areas with a similar shape.
 The problem is only partially solved by allowing the user to select only some countries (using the menu in the right panel).
 \cref{fig:mountains-non-stacked} shows an example of non-stacked areas in Gapminder:
-we have selected India and Russia to highlight them, but there are still clear overlapping problems, exactly for Russia.
+we have selected China and Nigeria to highlight them, but there are still clear overlapping problems, especially for Nigeria.
 
 \paragraph{Size}
 
 \paragraph{Color}
+The encoding of color is the same of the one for ``bubbles'' charts discussed in \cref{subsubsec:bubbles}.
+This encoding has a problem in the non-stacked areas version:
+when some countries are selected, the others are partially hidden by changing their level of transparency.
+Overlapping areas with different colors and a non-zero level of transparency create new colors which does not belong to the color mapping.
+This problem is evident with categorical color mapping:
+in \cref{fig:mountains-non-stacked}, the overlapping of red area that represents China with the big green area on the right generates a big orange area.
 
 \paragraph{Text Labels}
 
 \paragraph{Animation}
 
 \paragraph{Transparency}
+The encoding of color is the same as the ``bubbles'' charts discussed in \cref{subsubsec:bubbles}.
+We have discussed the problems of combining transparency and color in the color paragraph.
 
 
 \subsubsection{Rankings}
