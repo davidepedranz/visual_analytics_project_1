@@ -505,6 +505,21 @@ The rainbow colormap has been proven to be confusing and misleading \cite{color-
 We suggest to use a two-hue as the default for continuous values, since it allows a natural ordering of colors and it thus easier to invert.
 Heat colormap would also work, but would create ambiguities in case of missing values.
 
+\paragraph{Text Labels}
+In all chart types, Gapminder shows a label with the name of the country when the user moves the mouse on the corresponding bubble, area, bar or line.
+At the same time, the values of attribute encoded in color in showed close to the colormap, the value of the attribute encoded in size is shown in the title of the visualization etc.
+We propose to enrich the existing labels with information about the attributes for that country.
+\cref{fig:labels-custom} a sketch of this improvement:
+we added information about the population size (encoded in size) and average income (encoded in color).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/labels-custom}
+	\caption{Proposal of improvement in the use of labels in a chart of type ``map'' in Gapminder. We propose to replace the existing label (marked with the red ``x'') with a label with additional information in addition to the country name.}
+	\label{fig:labels-custom}
+\end{figure}
+
+
 \paragraph{Bubbles' Size}
 In the chart of types ``bubbles'' and ``map'', countries are represented as bubbles and the size is used to encode a given dimension of the dataset.
 The encoding is good since it allows to easily compute orderings, ranking and ratios, but it misses a legend:
@@ -517,3 +532,4 @@ We propose a trivial solution to solve the problem: add a legend for the size.
 	\caption{Example of size legend in a visualization in Tableaux. The right has as a panel with the some legend for the size of the bubbles used in the visualization. The example is taken from the ``World Indicators'' sample workbook in Tableaux Desktop 10.4.}
 	\label{fig:size-legend}
 \end{figure}
+
