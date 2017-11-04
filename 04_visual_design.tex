@@ -162,10 +162,10 @@ In other words, this allows the user to approximately locate the geographical po
 
 Gapminder allows to change the attribute encoded in color.
 \cref{fig:bubbles-continuous-color} shows an example where color is used to encode the percentage of children that complete the primary school.
-Gapminder automatically detects that the type of attribute is continuous and changes the color map to a continuous rainbow colormap, ranging from violet to represent the minimum value to red that to represent the maximum. It is possible to choose between the linear or a logarithmic scale using the dedicated menu; by default the tool uses a linear scale.
+Gapminder automatically detects that the type of attribute is continuous and changes the colormap to a continuous rainbow colormap, ranging from violet to represent the minimum value to red that to represent the maximum. It is possible to choose between the linear or a logarithmic scale using the dedicated menu; by default the tool uses a linear scale.
 
 This encoding is not optimal:
-rainbow color maps have been proven to be confusing (due to the non-obvious ordering of colors) and misleading (since it creates bands of colors with almost constant hues and sharp transitions in between) \cite{color-maps}.
+rainbow colormaps have been proven to be confusing (due to the non-obvious ordering of colors) and misleading (since it creates bands of colors with almost constant hues and sharp transitions in between) \cite{color-maps}.
 
 In case the attribute mapped to color is missing, Gapminder shows a white bubble with a black border.
 This is a good design choice, since white is a neutral color that does not interfere with the other colors.
@@ -276,7 +276,7 @@ Gapminder's ``mountains'' are area charts with animations.
 This type of chart is used to show the distribution of number of people by income (measured as \$ / day).
 Opposite to the other chart's types, Gapminder does not allow to change the indicator displayed.
 % TODO: this means an extra data model!
-Gapminder allows to choose not to stack the areas, stack them by color (this option is enables only if the color mapping is categorical) or stack them all.
+Gapminder allows to choose not to stack the areas, stack them by color (this option is enables only if the colormapping is categorical) or stack them all.
 \cref{fig:mountains} shows a screenshot of the ``mountains'' chart with stacked areas that shows the distribution of number of people by income.
 The visual variables used are position, size, color, text labels, animations and transparency.
 
@@ -327,8 +327,8 @@ However, this encoding is not clear for $2$ reasons:
 The encoding of color is the same of the one for ``bubbles'' charts discussed in \cref{subsubsec:bubbles}.
 This encoding has a problem in the non-stacked areas version:
 when some countries are selected, the others are partially hidden by changing their level of transparency.
-Overlapping areas with different colors and a non-zero level of transparency create new colors which does not belong to the color mapping.
-This problem is evident with categorical color mapping:
+Overlapping areas with different colors and a non-zero level of transparency create new colors which does not belong to the colormapping.
+This problem is evident with categorical colormapping:
 in \cref{fig:mountains-non-stacked}, the overlapping of red area that represents China with the big green area on the right generates a big orange area.
 
 \paragraph{Text Labels}
@@ -489,6 +489,23 @@ On the other hand, the animation does not have negative effects on the visualiza
 
 
 \subsection{Improvements}
+Most problems found in the visualizations are common to all types of charts available in Gapminder.
+We will first discuss the common one, then we will focus on specific problems.
+
+\paragraph{Color}
+The default dimension encoded in color in Gapminder is the region of the world.
+There are $4$ regions in the world and Gapminder uses $4$ very different colors: blue, green, yellow and red.
+This choice is perfect for normal people.
+However, about $10\%$ of the male population is affected by color blindness \cite{color-maps} and have difficulties to distinguish red from green.
+We suggest to include an option to change the colormap to a color blindness friendly one.
+The tool ColorBrewer\footnote{\url{http://colorbrewer2.org}} provides many choices\footnote{\url{http://colorbrewer2.org/#type=diverging&scheme=BrBG&n=4}} for a blindness friendly categorical colormap.
+
+A similar problem is the choice of the rainbow colormap for continuous data attributes.
+The rainbow colormap has been proven to be confusing and misleading \cite{color-maps} in many papers in the literature.
+We suggest to use a heat colormap as the default for continuous values, since it allows a natural ordering of colors and it thus easier to invert.
+
+\paragraph{TODO}
+
 TODO...
 Bullet list of points to discuss:
 \begin{itemize}
