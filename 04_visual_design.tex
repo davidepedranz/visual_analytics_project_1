@@ -440,8 +440,13 @@ Gapminder's ``lines'' are line charts with animations.
 They show the variation of one indicator over time:
 the x-axis represents time (in years), while the y-axis a given indicator.
 \cref{fig:lines} shows a Gapminder ``lines'' chart visualizing the average income of different countries over time.
-The visual variables used are position, color, text labels, animation and transparency.
+By default, only some countries are shown;
+the user can change the selected countries using the menu in the right panel.
+
+The visual variables used are position, color, text labels and animation.
 The encoding for the color is the same as for the ``bubbles'', so we omit it here.
+Transparency is not used in this type of chart:
+only the selected countries are visualized, the others are not drawn.
 
 \begin{figure}[h]
 	\centering
@@ -451,14 +456,36 @@ The encoding for the color is the same as for the ``bubbles'', so we omit it her
 \end{figure}
 
 \paragraph{Position}
+Position is used to encode the pair time (along the x-axis) and the selected indicator, for example income per person in \cref{fig:lines}.
+The encoding is very clear and effective:
+each point in the chart has a one-to-one mapping with a the pair time and income.
+The encoding is easy to reverse thanks to the dashed gray lines in the background, the ticks and the labels on the axises.
 
 \paragraph{Text Labels}
+Text labels are used for:
+\begin{itemize}
+	\item Describe the dimensions and measure units represented by the axises.
+	\item Provided a legend for the plotted line (each line has a label with the name of the country closed to the end of the line).
+\end{itemize}
+The use of labels is fundamental for the inverse mapping of position and color.
 
 \paragraph{Animation}
+Animation encodes times.
+In this type of chart, time is already encoded in the x-axis.
+The animation does not show any new information, but simply make the drawing of the line interactive:
+when the user starts the animation, lines are removed;
+at each step of the animation, lines are drawn from the first year to the current year in the animation.
+\cref{fig:lines-animation} shows an example of line chart when the animation reaches year $1935$.
 
-\paragraph{Transparency}
-3 status -> selected, visualized but not selected, hidden
+The animation does not encode any additional information, so it is not really useful to display the data.
+On the other hand, the animation does not have negative effects on the visualization, since the user can simply not use it.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/lines-animation}
+	\caption{Chart of type ``lines'' in Gapminder. The screenshot is taken during an animation.}
+	\label{fig:lines-animation}
+\end{figure}
 
 
 \subsection{Improvements}
