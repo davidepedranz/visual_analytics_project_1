@@ -265,6 +265,7 @@ For the same reason, selected countries do not have any particular behaviour dur
 
 
 \subsubsection{Mountains}
+\label{subsubsec:mountains}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/mountains}
@@ -519,7 +520,6 @@ we added information about the population size (encoded in size) and average inc
 	\label{fig:labels-custom}
 \end{figure}
 
-
 \paragraph{Bubbles' Size}
 In the chart of types ``bubbles'' and ``map'', countries are represented as bubbles and the size is used to encode a given dimension of the dataset.
 The encoding is good since it allows to easily compute orderings, ranking and ratios, but it misses a legend:
@@ -533,3 +533,15 @@ We propose a trivial solution to solve the problem: add a legend for the size.
 	\label{fig:size-legend}
 \end{figure}
 
+\paragraph{Mountains' Y-Axis}
+In \cref{subsubsec:mountains} we have described the problem of performing the reverse mapping for the y-axis (number of people) in the charts of type ``mountains''.
+To solve the problem, we propose to draw the y-axis and add some ticks and labels to indicate the corresponding values.
+In other words, we propose to create a legend for the y-axis.
+\cref{fig:mountains-y-legend} shows a sketch of this idea.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/mountains-y-legend}
+	\caption{Proposal of improvement for a chart of type ``mountains'' in Gapminder. We propose add a legend for the y-axis: we drawn the y-axis and put some text labels to make the scale explicit. Please note that the number used for the labels do not represent the data but have the only purpose to present the concept.}
+	\label{fig:mountains-y-legend}
+\end{figure}
