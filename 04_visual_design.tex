@@ -345,6 +345,25 @@ All labels use neutral color (white, gray or black) not to attract the attention
 This is a good design choice, since it allows the user to focus on the visualization.
 
 \paragraph{Animation}
+Animation is used to show encode time.
+Like for the ``bubbles'' chart, the animation is controlled using the ``play'' / ``pause'' button and the slider in the bottom.
+During the animation, position, size, color and text labels are updated to reflect the data of the visualized year.
+
+Animation allows the user to understand how the distribution of incomes in different countries has changed in time.
+If the user is interested in particular countries, it can select and highlight them.
+
+If no country is selected during the animation for the stacked version, countries in the same region are combined together.
+This allows the user to understand the changes and trends for different regions in the world.
+However, this encoding get really difficult to understand if the user changes the attribute encoded in color.
+\cref{fig:mountains-animation} shows an example where color encodes the average income per person:
+the user has no way to understand the meaning of different areas, since there are neither a legend nor labels to indicate it.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/mountains-animation}
+	\caption{Chart of type ``mountains'' with stacked areas in Gapminder. The screenshot is taken during an animation.}
+	\label{fig:mountains-animation}
+\end{figure}
 
 \paragraph{Transparency}
 The encoding of color is the same as the ``bubbles'' charts discussed in \cref{subsubsec:bubbles}.
