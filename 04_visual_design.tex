@@ -534,6 +534,13 @@ We propose a trivial solution to solve the problem: add a legend for the size.
 	\label{fig:size-legend}
 \end{figure}
 
+\paragraph{Mountains' Color \& Transparency}
+The combination of overlapping areas, use of colors and transparency generates new colors in the charts of type ``mountains''.
+This problem is evident when color encodes a categorical attribute, like in \cref{fig:mountains-non-stacked}.
+We believe that the main cause of problems is the use of transparency to highlight the selected countries (of better, to hide the unselected ones).
+We propose to use the same approach as the charts of type ``lines'', where the unselected countries are totally hidden.
+In this way we can avoid the use of transparency and avoid the creation of addition colors not defined in the colormap.
+
 \paragraph{Mountains' Y-Axis}
 In \cref{subsubsec:mountains} we have described the problem of performing the reverse mapping for the y-axis (number of people) in the charts of type ``mountains''.
 To solve the problem, we propose to draw the y-axis and add some ticks and labels to indicate the corresponding values.
