@@ -315,6 +315,13 @@ The problem is only partially solved by allowing the user to select only some co
 we have selected China and Nigeria to highlight them, but there are still clear overlapping problems, especially for Nigeria.
 
 \paragraph{Size}
+The size of an area encodes the size of the population of the corresponding country, both in the stacked and non-stacked versions.
+The encoding allows to approximately compare the sizes of population of different countries.
+However, this encoding is not clear for $2$ reasons:
+\begin{itemize}
+	\item The scale logarithmic along the x-axis deforms the areas.
+	\item There is no legend for the sized of the areas.
+\end{itemize}
 
 \paragraph{Color}
 The encoding of color is the same of the one for ``bubbles'' charts discussed in \cref{subsubsec:bubbles}.
@@ -325,6 +332,17 @@ This problem is evident with categorical color mapping:
 in \cref{fig:mountains-non-stacked}, the overlapping of red area that represents China with the big green area on the right generates a big orange area.
 
 \paragraph{Text Labels}
+Labels are used for different scopes:
+\begin{itemize}
+	\item The title on the top-left part of the window gives a description of the visualization.
+	\item The big text label with the year in the top-right part of the window display the year in which the population income is measured.
+	\item The numbers below the x-axis indicate the daily income for points with the corresponding x-coordinate. This is fundamental for the inverse mapping from the position along the x-axis to the absolute value of daily income.
+	\item A label above the x-axis indicates the measure unit used for the x-axis.
+	\item When the user selects some countries, some text labels are displayed under the title (see \cref{fig:mountains-non-stacked}): they provide a color legend for the selected countries and indicate the population size.
+	\item Finally, labels are display when the user moves the mouse on a particular area to indicate the name of the corresponding country.
+\end{itemize}
+All labels use neutral color (white, gray or black) not to attract the attention.
+This is a good design choice, since it allows the user to focus on the visualization.
 
 \paragraph{Animation}
 
