@@ -62,7 +62,7 @@ The slider allows to manually change the visualized year.
 
 \subsubsection{Bubbles}
 \label{subsubsec:bubbles}
-Gapminder's ``bubbles'' is a bubble chart with animations.
+Gapminder's ``bubbles'' are bubble charts with animations.
 We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when creating a new chart of type ``bubbles''.
 
 \begin{figure}[h]
@@ -265,18 +265,64 @@ For the same reason, selected countries do not have any particular behaviour dur
 
 
 \subsubsection{Mountains}
-...
-
-TODO!!!
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/mountains}
-	\caption{Chart of type ``mountains'' in Gapminder.}
+	\caption{Chart of type ``mountains'' with stacked areas in Gapminder.}
 	\label{fig:mountains}
 \end{figure}
 
-TODO!!!
+Gapminder's ``mountains'' are area charts with animations.
+This type of chart is used to show the distribution of number of people by income (measured as \$ / day).
+Opposite to the other chart's types, Gapminder does not allow to change the indicator displayed.
+% TODO: this means an extra data model!
+Gapminder allows to choose not to stack the areas, stack them by color (this option is enables only if the color mapping is categorical) or stack them all.
+\cref{fig:mountains} shows a screenshot of the ``mountains'' chart with stacked areas that shows the distribution of number of people by income.
+The visual variables used are position, size, color, text labels, animations and transparency.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\columnwidth]{figures/mountains-non-stacked}
+	\caption{Chart of type ``mountains'' with non-stacked areas in Gapminder.}
+	\label{fig:mountains-non-stacked}
+\end{figure}
+
+\paragraph{Position}
+Along the x-axis, position represents the daily income of the people on a logarithmic scale.
+Along the y-axis. position assumes different meanings depending if areas are stacked or not.
+If areas are not stack, the position along the y-axis indicates the number of people with some given income (determined by the position along the x-axis).
+If areas are stacked, the meaning is more complicated:
+it is still related to the number of people by income, but the value is measured starting from the point more in the bottom in the area for the fixed x-coordinate.
+In other words, the meaning of each point in the stacked version depends on the shape of the area where it is contained.
+
+Assuming basic knowledge of logarithms, the encoding along the x-axis is clear and easy to invert:
+the user can simply use the ticks and labels along the x-axis to figure out the daily income value represented by a point.
+However, Gapminder does not explicitly state that the scale is logarithmic, which may be confusing for the general public.
+
+For the non-stacked version, the mapping along the y-axis is clear: the distance from the x-axis is proportional to the number of people with some income.
+This allows the user to relatively easily compare the number of people with a certain income in different countries and compute approximate ratios.
+For example, one could say that the number of people with an income between $5$ and $10$ \$/day in China and India in $2015$ is about the same.
+However, it is difficult of impossible to read the absolute values, i.e. get how many people have a certain income in one country, since there is no explicit scale for the y-axis.
+
+For the stacked version, the encoding along the less y-axis intuitive, but allows to easily compute aggregations:
+the distance from the x-axis of each point represents the sum of people with the given income in all countries stacked together.
+From \cref{fig:mountains} it is possible to say that most people in the world have an income between $5$ and $10$ \$/day in $2015$.
+
+The non-stacked version has overlapping problems:
+countries with similar income's distributions result in overlapping areas with a similar shape.
+The problem is only partially solved by allowing the user to select only some countries (using the menu in the right panel).
+\cref{fig:mountains-non-stacked} shows an example of non-stacked areas in Gapminder:
+we have selected India and Russia to highlight them, but there are still clear overlapping problems, exactly for Russia.
+
+\paragraph{Size}
+
+\paragraph{Color}
+
+\paragraph{Text Labels}
+
+\paragraph{Animation}
+
+\paragraph{Transparency}
 
 
 \subsubsection{Rankings}
