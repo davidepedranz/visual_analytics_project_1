@@ -277,7 +277,7 @@ For the same reason, selected countries do not have any particular behaviour dur
 Gapminder's ``mountains'' are area charts with animations.
 This chart shows the distribution of number of people by income (measured as \$ / day).
 Opposite to the other chart's types, Gapminder does not allow to change the indicator displayed.
-Gapminder allows to choose not to stack the areas, stack them by color (this option is enables only if the color mapping is categorical) or stack them all.
+Gapminder allows to choose to stack all areas together, stack them by color (this option is enables only if the color mapping is categorical) or not stack them at all.
 \cref{fig:mountains} shows a screenshot of the ``mountains'' chart with stacked areas that shows the distribution of number of people by income.
 The visual variables used are position, size, color, text labels, animations and transparency.
 
@@ -289,10 +289,10 @@ The visual variables used are position, size, color, text labels, animations and
 \end{figure}
 
 \paragraph{Position}
-Along the x-axis, position represents the daily income of the people on a logarithmic scale.
-Along the y-axis. position assumes different meanings depending if areas are stacked or not.
-If areas are not stack, the position along the y-axis indicates the number of people with some given income (determined by the position along the x-axis).
-If areas are stacked, the meaning is more complicated:
+Along the x-axis, position represents the daily income of the people (on a logarithmic scale).
+Along the y-axis, position assumes different meanings depending if the areas are stacked or not.
+If the areas are not stacked, the position along the y-axis indicates the number of people with some given income (determined by the position along the x-axis).
+If the areas are stacked, the meaning is more complicated:
 it is still related to the number of people by income, but the value is measured starting from the point more in the bottom in the area for the fixed x-coordinate.
 In other words, the meaning of each point in the stacked version depends on the shape of the area where it is contained.
 
@@ -498,7 +498,7 @@ We will first discuss the common one, then we will focus on specific problems.
 
 \paragraph{Color}
 The default dimension encoded in color in Gapminder is the region of the world.
-There are $4$ regions in the world and Gapminder uses $4$ very different colors: blue, green, yellow and red.
+There are $4$ regions and Gapminder uses $4$ very different colors: blue, green, yellow and red.
 This choice is perfect for normal people.
 However, about $10\%$ of the male population is affected by color blindness \cite{color-maps} and have difficulties to distinguish red from green.
 We suggest to include an option to change the colormap to a color blindness friendly one.
