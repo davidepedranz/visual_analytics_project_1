@@ -6,7 +6,7 @@ Each observation in Gapminder is the value of an indicator measured for a specif
 The country can be seen as an independent variable, since it is not influences by the indicators (e.g. the average income does not determine what it the country).
 All measured indicators are dependent variables, since they refer to a specific country.
 In addition, indicators change over time.
-The dataset can thus be seen 4-dimensional dataset, where the first dimension (country) does not change over time, while the other dimensions (income, life expectation and population size) are time dependent.
+The dataset can thus be seen as a 4-dimensional dataset, where the first dimension (country) does not change over time, while the other dimensions (income, life expectation and population size) are time dependent.
 The geographical location of countries (i.e. the region of the world to which they belong) should not change over time, so this does not represent an extra dimension (there is a functional dependence between the country and the geographical location as a region of the world).
 
 \paragraph{Geographical Location}
@@ -44,10 +44,10 @@ The dataset contains points for the time range $1800$ to $2015$, for a total of 
 \subsubsection{Internal Representation}
 \label{subsubsec:internal_representation}
 Each indicator in Gapminder is internally represented as a table:
-the x-axis represents the time in years, the y-axis represents the country and the data in each cell represent the value measured for the indicator in the given year and country.
+the x-axis contains the time in years, the y-axis the country, and the data in each cell the value measured for the indicator in the given year and country.
 
-Not all datasets in Gapminder have the same size.
-Most indicators are defined for a small time period (few years) and have missing data for some country and / or some particular year.
+Not all indicators in Gapminder have the same size.
+Most of them are defined for a small time period (few years) and have missing data for some country and / or some particular year.
 Some indicator are not measured for some countries.
 Missing data corresponds to empty cells in some of these tables.
 
@@ -62,7 +62,7 @@ The same representation would also apply to a bigger subset of indicators: we wo
 Since all tables have the same structure, they can be combined in a cube:
 the first dimensions represents the countries, the second dimension contains all indicators measured for the countries and the last dimension present time.
 The projection of the cube along the third dimension (i.e. filtering the data for a specific year) results in the tables described in the previous paragraph.
-The projection along the second dimension (i.e. selecting a single indicator) results in the representation described in \cref{subsubsec:internal_representation}. 
+The projection along the second dimension (i.e. selecting a single indicator) gives the representation described in \cref{subsubsec:internal_representation}. 
 The projection along the first dimension (i.e. fixing a country) represents the evolution over time of all indicators for a country and can be seen as a table with the indicators on the x-axis and time in the y-axis.
 
 Additionally, countries are grouped into regions.

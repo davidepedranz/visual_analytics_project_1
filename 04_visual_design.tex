@@ -13,13 +13,14 @@ Gapminder is an Information Visualization (InfoVis) for the following reasons:
 
 Gapminder is clearly not a Scientific Visualization (SciVis).
 SciVis data have a spatial domain, numerical values for the data attributes and a low dimension.
+None of these properties apply to the dataset of Gapminder.
 
 Gapminder is also clearly not a Infographic, since it is interactive and allows to explore different indicators.
 Infographics are static, visualize summaries of the data and have the goal to present some content to a large audience.
 
 \subsection{Visual encoding}
-Gapminder offers $5$ different types of chart, called respectively: bubbles, maps, mountains, rankings and lines.
-Since each chart uses visual variables in different ways, we analyze each of them separately.
+Gapminder offers $5$ different types of chart, called respectively ``bubbles'', ``maps'', ``mountains'', ``rankings'' and ``lines''.
+Since each chart uses the visual variables in different ways, we will analyze each of them separately.
 
 For each chart, the screen is divided in different sectors:
 a navigation bar in the top, the chart in the center, a slider at the bottom and a side bar on the right.
@@ -40,8 +41,9 @@ When the user clicks the plus button, a new tab is created and displayed (\cref{
 the user can choose a type of chart by clicking the correspondent button.
 
 \paragraph{Right Panel}
-The panel on the right contains different controls.
-We will describe them from the top to the bottom.
+The panel on the right contains different controls (note that the panel is hidden during the selection of the chart type);
+an example is shown is \cref{fig:bubbles}.
+We will describe the controls from the top to the bottom.
 At the very top, a menu allows the user to change the variable encoded as color.
 Immediately below, Gapminder shows a colormap for the chosen variable.
 Next we find a list of checkbox, one for each country.
@@ -51,11 +53,11 @@ Depending on the type of chart, Gapminder shows additional buttons in this area;
 we will discuss this aspect in the sections about each chart's type.
 
 \paragraph{Chart}
-In the center-left part of the screen there is the current chart.
+In the center-left part of the screen there is the current chart (\cref{fig:bubbles}).
 The chart occupies most of the area available on the screen.
 
 \paragraph{Bottom Slider}
-In the bottom part of the screen we find a ``play'' button and a time slider.
+In the bottom part of the screen we find a ``play'' button and a time slider (\cref{fig:bubbles}).
 The button is used to start and stop the animation.
 The slider allows to manually change the visualized year.
 
@@ -63,7 +65,7 @@ The slider allows to manually change the visualized year.
 \subsubsection{Bubbles}
 \label{subsubsec:bubbles}
 Gapminder's ``bubbles'' are bubble charts with animations.
-We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when creating a new chart of type ``bubbles''.
+We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when creating this type of chart.
 
 \begin{figure}[h]
 	\centering
@@ -91,7 +93,7 @@ The user will thus:
     \item Be able to easily compute ratios between the values of the indicators encoded by each point. This allows to compare the situation of pairs of different countries from the point of view of the $2$ indicator.
 \end{itemize}
 
-Please note that there are some limitations with this encoding.
+However, there are some limitations with this encoding.
 For example, countries with the same income and life expectation will be shown in the same position:
 it would be impossible for the user to distinguish them.
 Also, bubbles with a big size tend to overlap with the others (since they take a lot of space on the screen).
@@ -104,7 +106,7 @@ Although it is possible, it is unlikely that $2$ or more countries have exactly 
 Gapminder takes some measures to reduce the problem of overlapping bubbles.
 It also allows to encode, with some limitations, other attributes in size and color.
 
-Additionally, the position visual variable is used in the colormap for the world's regions, as explained in the colors paragraph.
+Position is also used in the colormap for the world's regions, as explained in the colors paragraph.
 
 % TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
 
@@ -133,7 +135,7 @@ On the other hand, it is quite complex to visualize the real values of the popul
 The color can be used to encode any of the available dimensions of the dataset.
 In our case, the tool uses the color to encode the world region to which each country belongs.
 Gapminder shows a colormap in the top right corner of the windows:
-the colormap is visualized a small stylized planisphere where each continent if filled with the color that corresponds to its region.
+the colormap is visualized a small stylized planisphere where each continent is filled with the color that corresponds to its region.
 The tool differentiate $4$ world regions: americas, africa, europe and russia, asia and oceania.
 
 The colormap is categorical and uses different color hues for each different value.
@@ -145,7 +147,7 @@ There is no way to change the colormap or force a different mapping.
 Each bubble has a black border:
 this makes it easier to identify a bubble and distinguish it from the other ones.
 The visualization uses a white background, with a big gray text label in the center (to visualize the year, see the animation paragraph).
-This is a good design choice, since it is a neutral color that does not interfere with the visualization and creates a high contrast with the colors used for the bubbles.
+This is a good design choice, since both white and grey are neutral color that do not interfere with the visualization and create a high contrast with the colors used for the bubbles.
 
 The encoding is clear: the $4$ choses colors are very different from each other, so it is very easy to distinguish point that corresponds to countries in different regions.
 The inverse mapping from color to region of the world is also pretty straightforward, since there are only $4$ possible regions.
@@ -156,7 +158,7 @@ In other words, this allows the user to approximately locate the geographical po
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/bubbles-continuous-color}
-	\caption{Use of color to encode a continuous data attribute in a chart of type ``bubbles'' in Gapminder.}
+	\caption{Use of color to encode a continuous attribute in a chart of type ``bubbles'' in Gapminder.}
 	\label{fig:bubbles-continuous-color}
 \end{figure}
 
@@ -168,7 +170,7 @@ This encoding is not optimal:
 rainbow colormaps have been proven to be confusing (due to the non-obvious ordering of colors) and misleading (since it creates bands of colors with almost constant hues and sharp transitions in between) \cite{color-maps}.
 
 In case the attribute mapped to color is missing, Gapminder shows a white bubble with a black border.
-This is a good design choice, since white is a neutral color that does not interfere with the other colors.
+This is a good choice, since white is a neutral color that does not interfere with the other colors.
 
 \paragraph{Text Labels}
 Text labels are used to show the name of the indicator visualized on the axises, the measure units and the value for the ticks.
@@ -209,12 +211,12 @@ In this case, Gapminder shows multiple bubbles for each selected countries, in p
 Successive bubbles are connected by a line of the same color of the bubble (if they do not partially overlap already).
 The unselected countries are ``hidden'' by reducing their level of transparency (see the next paragraph).
 
-This features allows the user to visualize better visualize trends.
+This features allows the user to visualize trends easily and effectively.
 One can first play the animation without selecting any particular country to can an idea about the general trend, and then select a group of countries of interest:
 Gapminder will visualize the evolution over time for the selected countries (\cref{fig:bubbles-animation}).
-This makes also easy to compare the evolution of the situation of some countries during time.
+This also makes easy to compare the evolution of the situation of some countries during time.
 
-Animations are very powerful, but come with some drawbacks.
+Animations are very powerful, but present some drawbacks as well.
 In the example shown in \cref{fig:bubbles-animation}, the problem of overlapping described in the position paragraph is heightened.
 This is particularly true for bubbles with a big size (India in our example);
 an expert user can reduce the problem by changing the scale size for the bubbles using the ``Options'' menu.
