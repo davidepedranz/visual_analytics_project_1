@@ -98,7 +98,7 @@
       "domainMin": null,
       "extent": [
        0,
-       0.17
+       0.16
       ],
       "scaleType": "linear",
       "use": "indicator",
@@ -301,7 +301,14 @@
         "usa",
         "rus",
         "chn",
-        "nga"
+        "nga",
+        "bra",
+        "can",
+        "ita",
+        "ind",
+        "egy",
+        "jpn",
+        "mdg"
        ]
       }
      },
@@ -829,7 +836,7 @@
       "domainMin": 15,
       "extent": [
        0,
-       0.85
+       0.93
       ],
       "scaleType": "linear",
       "use": "indicator",
