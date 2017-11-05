@@ -427,7 +427,7 @@ On the one hand, this makes easier to associate them with the correct bar.
 On the other hand, it is particularly difficult to read the labels inside red and blue bars due to the low contrast.
 
 \paragraph{Animation}
-Animation is used to show encode time.
+Animation is used to show time.
 During the animation, position, size, label and labels of the bars are updated to reflect the displayed year.
 The user can select one or more countries to highlight them:
 in this case, Gapminder will also automatically scroll the view if the selected bars exits the current one.
@@ -435,7 +435,7 @@ in this case, Gapminder will also automatically scroll the view if the selected 
 The animation allows to track the evolution of the selected countries over time.
 However, it does not allow to have a visualize the global trend, since there are too many variations (also, not all bars fit in the size of a the monitor).
 It is also difficult to compare $2$ or more countries, since small changes in the measured value can cause significant changes in the ranking and / or a swap in their relative order: tracking all these variations over successive visualizations is hard.
-For this kind of task, the chart of type ``bubbles'' is to be preferred.
+For this kind of task, the chart of type ``bubbles'' should be preferred.
 
 
 \subsubsection{Lines}
@@ -473,7 +473,7 @@ Text labels are used for:
 The use of labels is fundamental for the inverse mapping of position and color.
 
 \paragraph{Animation}
-Animation encodes times.
+Animation encodes time.
 In this type of chart, time is already encoded in the x-axis.
 The animation does not show any new information, but simply make the drawing of the line interactive:
 when the user starts the animation, lines are removed;
@@ -482,6 +482,7 @@ at each step of the animation, lines are drawn from the first year to the curren
 
 The animation does not encode any additional information, so it is not really useful to display the data.
 On the other hand, the animation does not have negative effects on the visualization, since the user can simply not use it.
+We believe that the animation was added here to maintain a design similar to the other types of charts.
 
 \begin{figure}[h]
 	\centering
@@ -507,12 +508,13 @@ A similar problem is the choice of the rainbow colormap for continuous data attr
 The rainbow colormap has been proven to be confusing and misleading \cite{color-maps} in many papers in the literature.
 We suggest to use a two-hue as the default for continuous values, since it allows a natural ordering of colors and it thus easier to invert.
 Heat colormap would also work, but would create ambiguities in case of missing values.
+At least, there should be an option to switch between different color maps.
 
 \paragraph{Text Labels}
 In all chart types, Gapminder shows a label with the name of the country when the user moves the mouse on the corresponding bubble, area, bar or line.
 At the same time, the values of attribute encoded in color in showed close to the colormap, the value of the attribute encoded in size is shown in the title of the visualization etc.
 We propose to enrich the existing labels with information about the attributes for that country.
-\cref{fig:labels-custom} a sketch of this improvement:
+\cref{fig:labels-custom} shows a sketch for this improvement:
 we added information about the population size (encoded in size) and average income (encoded in color).
 
 \begin{figure}[h]
@@ -526,18 +528,18 @@ we added information about the population size (encoded in size) and average inc
 In the chart of types ``bubbles'' and ``map'', countries are represented as bubbles and the size is used to encode a given dimension of the dataset.
 The encoding is good since it allows to easily compute orderings, ranking and ratios, but it misses a legend:
 the user can not invert the mapping and read the absolute values of the display data.
-We propose a trivial solution to solve the problem: add a legend for the size.
+We propose a trivial solution to solve the problem: add a legend for the size, something similar to the one shown in \cref{fig:size-legend}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/size-legend}
-	\caption{Example of size legend in a visualization in Tableaux. The right has as a panel with the some legend for the size of the bubbles used in the visualization. The example is taken from the ``World Indicators'' sample workbook in Tableaux Desktop 10.4.}
+	\caption{Example of size legend in a visualization in Tableau. The right has as a panel with the some legend for the size of the bubbles used in the visualization. The example is taken from the ``World Indicators'' sample workbook in Tableau Desktop 10.4.}
 	\label{fig:size-legend}
 \end{figure}
 
 \paragraph{Mountains' Color \& Transparency}
-The combination of overlapping areas, use of colors and transparency generates new colors in the charts of type ``mountains''.
-This problem is evident when color encodes a categorical attribute, like in \cref{fig:mountains-non-stacked}.
+The combination of overlapping areas, use of color and transparency generates new colors in the charts of type ``mountains''.
+This problem is evident when color encodes a categorical attribute, for example in \cref{fig:mountains-non-stacked}.
 We believe that the main cause of problems is the use of transparency to highlight the selected countries (of better, to hide the unselected ones).
 We propose to use the same approach as the charts of type ``lines'', where the unselected countries are totally hidden.
 In this way we can avoid the use of transparency and avoid the creation of addition colors not defined in the colormap.
@@ -551,7 +553,7 @@ In other words, we propose to create a legend for the y-axis.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/mountains-y-legend}
-	\caption{Proposal of improvement for a chart of type ``mountains'' in Gapminder. We propose add a legend for the y-axis: we drawn the y-axis and put some text labels to make the scale explicit. Please note that the number used for the labels do not represent the data but have the only purpose to present the concept.}
+	\caption{Sketch for an improvement in the charts of type ``mountains'' in Gapminder. We propose add a legend for the y-axis: we drawn the y-axis and put some text labels to make the scale explicit. Please note that the number used for the labels do not represent the data but have the only purpose to present the concept.}
 	\label{fig:mountains-y-legend}
 \end{figure}
 
@@ -561,4 +563,3 @@ The labels are needed for the reverse mapping from the length of the bars to the
 Unfortunately, the label uses a color very similar to the one of the bars, which makes them difficult to read.
 We suggest to choose colors that create a bigger contrast, in order to make the labels easy to read.
 In addition to this, the x-axis could be drawn explicitly (like the y-axis in the ``mountains'' chart, see the previous paragraph).
-
