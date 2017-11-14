@@ -285,6 +285,16 @@ This chart shows the distribution of number of people by income (measured as \$ 
 Opposite to the other chart's types, Gapminder does not allow to change the indicator displayed.
 Gapminder allows to choose to stack all areas together, stack them by color (this option is enables only if the color mapping is categorical) or not stack them at all.
 \cref{fig:mountains} shows a screenshot of the ``mountains'' chart with stacked areas that shows the distribution of number of people by income.
+
+Each area display a continuous distribution of number of people by income, but the underling data used by Gapminder is inherently discrete (see \cref{subsubsec:internal_representation}).
+Gapminder probably combines the information about the population size and the average income per people to compute the area for each country, then it displays it as a Gaussian distribution centered on the average income per person.
+It is not clear how this is done:
+for example, which value is used as standard deviation to define the Gaussian distributions?
+Another clear problem is the skewness:
+it is unlikely that all countries have exactly a symmetric distribution of number of people by income.
+This representation may be misleading when single countries are examined in isolation.
+The problem is less evident if the areas are stacked together.
+
 The visual variables used are position, size, color, text labels, animations and transparency.
 
 \begin{figure}[h]
