@@ -218,6 +218,9 @@ One can first play the animation without selecting any particular country to can
 Gapminder will visualize the evolution over time for the selected countries (\cref{fig:bubbles-animation}).
 This also makes easy to compare the evolution of the situation of some countries during time.
 
+It is interesting to notice that trails are showed by default when selecting one or more countries and can be disabled if needed, but it is not possible to activate them if no countries is selected.
+This is a good design choice, since showing the trails for all countries in the world would likely create too much occlusion to give any real advantage.
+
 Animations are very powerful, but present some drawbacks as well.
 In the example shown in \cref{fig:bubbles-animation}, the problem of overlapping described in the position paragraph is heightened.
 This is particularly true for bubbles with a big size (India in our example);
