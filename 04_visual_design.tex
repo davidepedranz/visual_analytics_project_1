@@ -558,6 +558,12 @@ We propose a trivial solution to solve the problem: add a legend for the size, s
 	\label{fig:size-legend}
 \end{figure}
 
+\paragraph{Bubbles' Overlapping}
+A way to partially solve the problem of overlapping bubbles described in \cref{subsubsec:bubbles} is to use a shaded profile:
+the center of each bubble has a higher luminance, which decreases with the distance from the center.
+When bubbles of the same color overlap, the shading helps seeing the overlaps better and thus distinguishing different bubbles, without taking any extra space.
+This technique is inspired to cushion treemaps, where shading is used to convey the hierarchy organization of rectangles closed to each other.
+
 \paragraph{Mountains' Color \& Transparency}
 The combination of overlapping areas, use of color and transparency generates new colors in the charts of type ``mountains''.
 This problem is evident when color encodes a categorical attribute, for example in \cref{fig:mountains-non-stacked}.
