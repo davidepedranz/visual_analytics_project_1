@@ -209,10 +209,11 @@ A small control to the right of the slider allows to change the speed of the ani
 
 The user can also select one or more countries before running the animation.
 In this case, Gapminder shows multiple bubbles for each selected countries, in particular one for each year the animation is played.
-Successive bubbles are connected by a line of the same color of the bubble (if they do not partially overlap already).
+Successive bubbles are connected by a line of the same color of the bubble (if they do not partially overlap already), defining a trail.
+Note that it is possible to disable the trails functionality using the button ``Trails'' in the right panel.
 The unselected countries are ``hidden'' by reducing their level of transparency (see the next paragraph).
 
-This features allows the user to visualize trends easily and effectively.
+This feature allows the user to visualize trends easily and effectively.
 One can first play the animation without selecting any particular country to can an idea about the general trend, and then select a group of countries of interest:
 Gapminder will visualize the evolution over time for the selected countries (\cref{fig:bubbles-animation}).
 This also makes easy to compare the evolution of the situation of some countries during time.
@@ -220,7 +221,8 @@ This also makes easy to compare the evolution of the situation of some countries
 Animations are very powerful, but present some drawbacks as well.
 In the example shown in \cref{fig:bubbles-animation}, the problem of overlapping described in the position paragraph is heightened.
 This is particularly true for bubbles with a big size (India in our example);
-an expert user can reduce the problem by changing the scale size for the bubbles using the ``Options'' menu.
+an expert user can solve the problem by disabling the trails functionality or reduce it by changing the scale size for the bubbles using the ``Options'' menu:
+this allows to change the tradeoff between the occlusion and expressiveness added by the animation.
 Nevertheless, animations are really effective to visualize changes and trends in the indicators over time.
 
 \paragraph{Transparency}
