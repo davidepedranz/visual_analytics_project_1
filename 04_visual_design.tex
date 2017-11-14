@@ -108,8 +108,6 @@ It also allows to encode, with some limitations, other attributes in size and co
 
 Position is also used in the colormap for the world's regions, as explained in the colors paragraph.
 
-% TODO: we can force the tool to use categorical data for x-axis / y-axis !!! BAD
-
 \paragraph{Size}
 The size is used to encode the third indicator, in our case the population size.
 In particular, the value is encoded as the area of the bubble.
@@ -168,6 +166,9 @@ Gapminder automatically detects that the type of attribute is continuous and cha
 
 This encoding is not optimal:
 rainbow colormaps have been proven to be confusing (due to the non-obvious ordering of colors) and misleading (since it creates bands of colors with almost constant hues and sharp transitions in between) \cite{color-maps}.
+On the other hand, the rainbow has an advantage:
+the banding effect implicitly defines groups of countries with a similar value for the indicator encoded in color.
+This allows the user to easily separate countries into clusters, where each cluster corresponds to a band.
 
 In case the attribute mapped to color is missing, Gapminder shows a white bubble with a black border.
 This is a good choice, since white is a neutral color that does not interfere with the other colors.
@@ -506,9 +507,11 @@ The tool ColorBrewer\footnote{\url{http://colorbrewer2.org}} provides many choic
 
 A similar problem is the choice of the rainbow colormap for continuous data attributes.
 The rainbow colormap has been proven to be confusing and misleading \cite{color-maps} in many papers in the literature.
-We suggest to use a two-hue as the default for continuous values, since it allows a natural ordering of colors and it thus easier to invert.
-Heat colormap would also work, but would create ambiguities in case of missing values.
-At least, there should be an option to switch between different color maps.
+We suggest to use a two-hue as the default for continuous values, since it allows a natural ordering of colors and it thus easier to invert (heat colormap would also work, but would create ambiguities in case of missing values).
+The rainbow colormap has the only advantage to artificially define groups because of the banding effects:
+this may actually be desired for some visualizations, if the user is conscious of it.
+There should be an option to switch between the two-hue and the rainbow colormap.
+At best, every color map should also have a short description of its use cases (i.e. for which task it is better than the other).
 
 \paragraph{Text Labels}
 In all chart types, Gapminder shows a label with the name of the country when the user moves the mouse on the corresponding bubble, area, bar or line.
