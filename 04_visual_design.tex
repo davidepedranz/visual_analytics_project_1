@@ -455,7 +455,7 @@ For this kind of task, the chart of type ``bubbles'' should be preferred.
 
 
 \subsubsection{Lines}
-Gapminder's ``lines'' are line charts with animations.
+Gapminder's ``lines'' are multivariable line charts with animations.
 They show the variation of one indicator over time:
 the x-axis represents time (in years), while the y-axis a given indicator.
 \cref{fig:lines} shows a Gapminder ``lines'' chart visualizing the average income of different countries over time.
@@ -464,8 +464,6 @@ the user can change the selected countries using the menu in the right panel.
 
 The visual variables used are position, color, text labels and animation.
 The encoding for the color is the same as for the ``bubbles'', so we omit it here.
-Transparency is not used in this type of chart:
-only the selected countries are visualized, the others are not drawn.
 
 \begin{figure}[h]
 	\centering
@@ -507,6 +505,11 @@ We believe that the animation was added here to maintain a design similar to the
 	\label{fig:lines-animation}
 \end{figure}
 
+\paragraph{Transparency}
+Transparency is not used in this type of chart:
+only the selected countries are visualized, the others are not drawn.
+This is a good design choice, since it effectively solves the problem of occlusion typical of multivariable line charts.
+By default, only $4$ countries are selected, so that the occlusion is minimum.
 
 \subsection{Improvements}
 Most problems found in the visualizations are common to all types of charts available in Gapminder.
