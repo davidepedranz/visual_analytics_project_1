@@ -545,18 +545,18 @@ we added information about the population size (encoded in size) and average inc
 	\label{fig:labels-custom}
 \end{figure}
 
-\paragraph{Bubbles' Size}
-In the chart of types ``bubbles'' and ``map'', countries are represented as bubbles and the size is used to encode a given dimension of the dataset.
-The encoding is good since it allows to easily compute orderings, ranking and ratios, but it misses a legend:
-the user can not invert the mapping and read the absolute values of the display data.
-We propose a trivial solution to solve the problem: add a legend for the size, something similar to the one shown in \cref{fig:size-legend}.
-
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/size-legend}
 	\caption{Example of size legend in a visualization in Tableau. The panel on the right show the legend for the size of the bubbles used in the visualization. The example is taken from the ``World Indicators'' sample workbook in Tableau Desktop 10.4.}
 	\label{fig:size-legend}
 \end{figure}
+
+\paragraph{Bubbles' Size}
+In the chart of types ``bubbles'' and ``map'', countries are represented as bubbles and the size is used to encode a given dimension of the dataset.
+The encoding is good since it allows to easily compute orderings, ranking and ratios, but it misses a legend:
+the user can not invert the mapping and read the absolute values of the display data.
+We propose a trivial solution to solve the problem: add a legend for the size, something similar to the one shown in \cref{fig:size-legend}.
 
 \paragraph{Bubbles' Overlapping}
 A way to partially solve the problem of overlapping bubbles described in \cref{subsubsec:bubbles} is to use a shaded profile:
