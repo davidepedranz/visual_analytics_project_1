@@ -36,8 +36,8 @@ a navigation bar in the top, the chart in the center, a slider at the bottom and
 Gapminder allows the user to create and use multiple charts at the same time: each chart is visualized as a tab in the navigation bar.
 The navigation bar is located in the top part of the windows and is always visible.
 The user can change the chart currently visualized by clicking the corresponding tab in the navigation bar.
-To create a new chart, the user can use the \texttt{+} plus button at the end of the navigation bar.
-When the user clicks the plus button, a new tab is created and displayed (\cref{fig:home}):
+To create a new chart, the user can use the ``plus'' button at the end of the navigation bar.
+When the user clicks the button, a new tab is created and displayed (\cref{fig:home}):
 the user can choose a type of chart by clicking the correspondent button.
 
 \paragraph{Right Panel}
@@ -67,6 +67,8 @@ The slider allows to manually change the visualized year.
 Gapminder's ``bubbles'' are bubble charts with animations.
 We consider the particular instance of bubble chart with the income on the x-axis, the life expectation on the y-axis and the population size encoded as the bubbles size; this is the default visualization offered by Gapminder when creating this type of chart.
 
+The visual variables being used are: position, size, color, text labels, animations and transparency.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/bubbles}
@@ -74,10 +76,8 @@ We consider the particular instance of bubble chart with the income on the x-axi
 	\label{fig:bubbles}
 \end{figure}
 
-The visual variables being used are: position, size, color, text labels, animations and transparency.
-
 \paragraph{Position}
-The position is used to encode the value of $2$ indicators:
+Position is used to encode the value of $2$ indicators:
 the position along the x-axis encodes the first indicator (in our case the income), the position along the y-axis the second one (in our case the life expectation).
 Each point in the chart corresponds to a pair of income and life expectation.
 By default, Gapminder limits the range of values showed on each axis between the smallest and the biggest value for the attribute displayed on that axis (plus some additional margin to make sure points do not overlap with the axises).
@@ -109,7 +109,7 @@ It also allows to encode, with some limitations, other attributes in size and co
 Position is also used in the colormap for the world's regions, as explained in the colors paragraph.
 
 \paragraph{Size}
-The size is used to encode the third indicator, in our case the population size.
+Size is used to encode the third indicator, in our case the population size.
 In particular, the value is encoded as the area of the bubble.
 
 Size is selective, ordinal and quantitative.
@@ -126,11 +126,11 @@ The value is visualized on the right side of the screen only if the user moves t
 
 The encoding of the population sizes is overall clear, but it can be improved.
 On the one hand, the user is able to distinguish and compare the population of different countries.
-On the other hand, it is quite complex to visualize the real values of the populations.
+On the other hand, it is difficult to understand the real absolute values of the populations.
 
 \paragraph{Color}
 \label{paragraph:bubbles-color}
-The color can be used to encode any of the available dimensions of the dataset.
+Color can be used to encode any of the available dimensions of the dataset.
 In our case, the tool uses the color to encode the world region to which each country belongs.
 Gapminder shows a colormap in the top right corner of the windows:
 the colormap is visualized a small stylized planisphere where each continent is filled with the color that corresponds to its region.
@@ -178,8 +178,9 @@ Text labels are used to show the name of the indicator visualized on the axises,
 The measure unit is shown above to the right for the x-axis.
 Below the axis there are the values for the ticks (about $10$).
 Below them in the center there is the name of the indicator.
-All labels are gray.
 The y-axis is similar.
+All labels are gray (a neutral color) not to attract the attention;
+this is a good design choice, since it allows the user to focus on the visualization.
 
 Labels are used to visualize additional information about the bubbles.
 When the user selects a particular bubble (either by moving the mouse over it, clicking it or selecting the checkbox of the corresponding country in the right panel), a text label is shown to the top right of the bubble.
@@ -338,7 +339,7 @@ The encoding allows to approximately compare the sizes of population of differen
 However, this encoding is not clear for $2$ reasons:
 \begin{itemize}
 	\item The scale logarithmic along the x-axis deforms the areas.
-	\item There is no legend for the sized of the areas.
+	\item There is no legend for the size of the areas.
 \end{itemize}
 
 \paragraph{Color}
@@ -427,7 +428,7 @@ The user is able to:
 
 The encoding is good for ordering and computing rates.
 However, it is not easy to extract the absolute value of a bar, since there is no length legend.
-This information is only encoded in text labels inside each bar, but they are not always easy to read.
+This information is only encoded in text labels inside each bar, which are not always easy to read.
 
 \paragraph{Text Labels}
 Text labels does not encode directly any dimension, but are fundamental for different aims:
@@ -486,6 +487,9 @@ Text labels are used for:
 \end{itemize}
 The use of labels is fundamental for the inverse mapping of position and color.
 
+The labels with the name of countries are of the same color of the line that corresponds to them.
+This is a good design choice since it uses color to make the association line-label easier to read. 
+
 \paragraph{Animation}
 Animation encodes time.
 In this type of chart, time is already encoded in the x-axis.
@@ -513,7 +517,7 @@ By default, only $4$ countries are selected, so that the occlusion is minimum.
 
 \subsection{Improvements}
 Most problems found in the visualizations are common to all types of charts available in Gapminder.
-We will first discuss the common one, then we will focus on specific problems.
+We will first discuss the common ones, then we will focus on specific problems.
 
 \paragraph{Color}
 The default dimension encoded in color in Gapminder is the region of the world.
@@ -531,13 +535,6 @@ this may actually be desired for some visualizations, if the user is conscious o
 There should be an option to switch between the two-hue and the rainbow colormap.
 At best, every color map should also have a short description of its use cases (i.e. for which task it is better than the other).
 
-\paragraph{Text Labels}
-In all chart types, Gapminder shows a label with the name of the country when the user moves the mouse on the corresponding bubble, area, bar or line.
-At the same time, the values of attribute encoded in color in showed close to the colormap, the value of the attribute encoded in size is shown in the title of the visualization etc.
-We propose to enrich the existing labels with information about the attributes for that country.
-\cref{fig:labels-custom} shows a sketch for this improvement:
-we added information about the population size (encoded in size) and average income (encoded in color).
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/labels-custom}
@@ -545,12 +542,19 @@ we added information about the population size (encoded in size) and average inc
 	\label{fig:labels-custom}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\columnwidth]{figures/size-legend}
 	\caption{Example of size legend in a visualization in Tableau. The panel on the right show the legend for the size of the bubbles used in the visualization. The example is taken from the ``World Indicators'' sample workbook in Tableau Desktop 10.4.}
 	\label{fig:size-legend}
 \end{figure}
+
+\paragraph{Text Labels}
+In all chart types, Gapminder shows a label with the name of the country when the user moves the mouse on the corresponding bubble, area, bar or line.
+At the same time, the values of attribute encoded in color in showed close to the colormap, the value of the attribute encoded in size is shown in the title of the visualization etc.
+We propose to enrich the existing labels with information about the attributes for that country.
+\cref{fig:labels-custom} shows a sketch for this improvement:
+we added information about the population size (encoded in size) and average income (encoded in color).
 
 \paragraph{Bubbles' Size}
 In the chart of types ``bubbles'' and ``map'', countries are represented as bubbles and the size is used to encode a given dimension of the dataset.
@@ -587,6 +591,6 @@ In other words, we propose to create a legend for the y-axis.
 \paragraph{Rankings' Labels}
 The charts of type ``rankings'' have labels to indicate the value encoded in the bars' length (\cref{subsubsec:rankings}).
 The labels are needed for the reverse mapping from the length of the bars to the value of the attribute encoded.
-Unfortunately, the label uses a color very similar to the one of the bars, which makes them difficult to read.
+Unfortunately, the labels use a color very similar to the one of the bars, which makes them difficult to read.
 We suggest to choose colors that create a bigger contrast, in order to make the labels easy to read.
 In addition to this, the x-axis could be drawn explicitly (like the y-axis in the ``mountains'' chart, see the previous paragraph).

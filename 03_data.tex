@@ -3,14 +3,14 @@
 
 \subsection{Data Attributes}
 Each observation in Gapminder is the value of an indicator measured for a specific country in the world in a given year.
-The country can be seen as an independent variable, since it is not influences by the indicators (e.g. the average income does not determine what it the country).
+The country can be seen as an independent variable, since it is not influenced by the indicators (e.g. the average income does not determine what it the country).
 All measured indicators are dependent variables, since they refer to a specific country.
 In addition, indicators change over time.
 The dataset can thus be seen as a 4-dimensional dataset, where the first dimension (country) does not change over time, while the other dimensions (income, life expectation and population size) are time dependent.
 The geographical location of countries (i.e. the region of the world to which they belong) should not change over time, so this does not represent an extra dimension (there is a functional dependence between the country and the geographical location as a region of the world).
 
 \paragraph{Geographical Location}
-The geographical location is expressed in term of countries, grouped into world regions.
+The geographical location is expressed in terms of countries, grouped into world regions.
 Since it does not exists a natural ordering of countries, the attribute type is categorical.
 Gapminder has data about $244$ different countries in the world, grouped in $4$ regions (which approximate the world's division into continents).
 
